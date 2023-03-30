@@ -16,3 +16,10 @@
 - [x] Colors
 - [x] Border radius
 - [x] Breakpoints
+
+### Utility components
+
+- [x] Flex
+- [ ] Grid
+- [x] Box
+- [ ] Typography

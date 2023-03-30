@@ -5,6 +5,7 @@ import { LogoSM } from "../graphics/Logo";
 import { Menu } from "../graphics/Menu";
 import styled from "styled-components";
 import theme from "../../styles/Theme";
+import Link from "next/link";
 
 const Nav = styled.nav`
   @media (min-width: ${theme.breakpoints.md}) {
@@ -22,9 +23,11 @@ const MobileNav: FC = () => (
       alignItems="center"
       justifyContent="space-between"
     >
-      <Box>
-        <LogoSM />
-      </Box>
+      <Link href={"/"}>
+        <Box>
+          <LogoSM />
+        </Box>
+      </Link>
 
       <Flex
         justifyContent="center"
