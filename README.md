@@ -4,14 +4,15 @@
 
 - [x] [Install styled-components](https://github.com/vercel/next.js/blob/canary/examples/with-styled-components/pages/_document.tsx)
 - [ ] Install radix-ui
-- [ ] Global styles
+- [x] Global styles
+- [x] Default theme (Using tokens)
 - [ ] Define fonts
 
 ### Tokens
 
-- [ ] Font sizes
-- [ ] Font weights
-- [ ] Spacing (base)
-- [ ] Colors
-- [ ] Border radius
-- [ ] Breakpoints
+- [x] Font sizes
+- [x] Font weights
+- [x] Spacing (base)
+- [x] Colors
+- [x] Border radius
+- [x] Breakpoints
