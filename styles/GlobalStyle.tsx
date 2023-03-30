@@ -1,6 +1,13 @@
 import { createGlobalStyle } from "styled-components";
+import theme from "./Theme";
 
 const GlobalStyle = createGlobalStyle`
+
+    ::selection {
+        background-color: ${theme.colors.highglight};
+        color: ${theme.colors.background};
+    }
+
 /*
 1. Use a more-intuitive box-sizing model.
 */

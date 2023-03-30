@@ -6,7 +6,7 @@
 - [ ] Install radix-ui
 - [x] Global styles
 - [x] Default theme (Using tokens)
-- [ ] Define fonts
+- [x] Define fonts
 
 ### Tokens
 
