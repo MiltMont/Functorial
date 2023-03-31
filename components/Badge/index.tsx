@@ -1,6 +1,4 @@
 import { FC } from "react";
-import theme from "../../styles/Theme";
-import { base } from "../../utils/base";
 import Container from "./css";
 
 export type Props = {

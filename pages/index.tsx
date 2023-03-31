@@ -1,33 +1,8 @@
 import Flex from "../components/utils/Flex";
 import Box from "../components/utils/Box";
 import theme from "../styles/Theme";
-import styled from "styled-components";
-import { base } from "../utils/base";
 import ArticleCard from "../components/ArticleCard";
-
-const Button = styled.button`
-  background-color: ${theme.colors.accent7};
-  border: none;
-  border-radius: ${theme.borderRadius[2]};
-  color: ${theme.colors.background};
-  padding-left: ${theme.space[1]};
-  padding-right: ${theme.space[1]};
-  padding-top: ${base(1 / 3)};
-  padding-bottom: ${base(1 / 3)};
-  font-weight: ${theme.fontWeight[2]};
-`;
-
-const ButtonOutline = styled.button`
-  border: 1px solid ${theme.colors.accent7};
-  background-color: transparent;
-  border-radius: ${theme.borderRadius[2]};
-  color: ${theme.colors.accent7};
-  padding-left: ${theme.space[1]};
-  padding-right: ${theme.space[1]};
-  padding-top: ${base(1 / 3)};
-  padding-bottom: ${base(1 / 3)};
-  font-weight: ${theme.fontWeight[2]};
-`;
+import Button from "../components/Button";
 
 export default function Home() {
   return (
@@ -66,8 +41,8 @@ export default function Home() {
           has to be.
         </Box>
         <Flex gap={theme.space[1]}>
-          <Button>About</Button>
-          <ButtonOutline>Contact</ButtonOutline>
+          <Button variant="gray">About</Button>
+          <Button variant="grayOutline">Contact</Button>
         </Flex>
       </Box>
       <ArticleCard
