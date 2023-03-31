@@ -30,3 +30,4 @@
 - [ ] Lecture Note Card (Mobile)
 
 - [x] Badge (Add variants)
+- [ ] Button (Add outline and color variants)

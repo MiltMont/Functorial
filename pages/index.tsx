@@ -3,7 +3,7 @@ import Box from "../components/utils/Box";
 import theme from "../styles/Theme";
 import styled from "styled-components";
 import { base } from "../utils/base";
-import ArticleCard from "../components/ArticleCard/ArticleCard";
+import ArticleCard from "../components/ArticleCard";
 
 const Button = styled.button`
   background-color: ${theme.colors.accent7};
@@ -74,6 +74,8 @@ export default function Home() {
         title="Formalizing Topology in Lean"
         summary="In this post we explore the distinction between formalization and implementation. As our main tool, we use Lean 3."
         date="May 23, 2023"
+        slug="formalizing-topology-in-lean"
+        tag="Topology"
       />
     </>
   );
