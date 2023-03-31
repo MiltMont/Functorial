@@ -31,3 +31,7 @@
 
 - [x] Badge (Add variants)
 - [x] Button (Add outline and color variants)
+
+## Errors
+
+- [ ] Fix the unique props error. (Josh Post)

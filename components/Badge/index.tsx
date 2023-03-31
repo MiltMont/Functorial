@@ -2,7 +2,7 @@ import { FC } from "react";
 import Container from "./css";
 
 export type Props = {
-  variant?: "blue" | "red" | "gray";
+  variant?: "success" | "danger" | "gray" | "warning";
   content?: string;
 };
 

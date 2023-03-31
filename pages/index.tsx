@@ -3,6 +3,7 @@ import Box from "../components/utils/Box";
 import theme from "../styles/Theme";
 import ArticleCard from "../components/ArticleCard";
 import Button from "../components/Button";
+import LectureCard from "../components/LectureCard";
 
 export default function Home() {
   return (
@@ -51,6 +52,12 @@ export default function Home() {
         date="May 23, 2023"
         slug="formalizing-topology-in-lean"
         tag="Topology"
+      />
+
+      <LectureCard
+        title="Functional Analysis I"
+        slug="functional-analysis"
+        docType={["PDF", "LaTex"]}
       />
     </>
   );

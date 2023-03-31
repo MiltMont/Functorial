@@ -9,15 +9,20 @@ const variants = {
     color: theme.colors.accent6,
     border: `1px solid ${theme.colors.accent3}`,
   },
-  blue: {
+  success: {
     backgroundColor: theme.colors.success,
     color: theme.colors.successLighter,
     border: `1px solid ${theme.colors.successLight}`,
   },
-  red: {
+  danger: {
     backgroundColor: theme.colors.errorDark,
     color: theme.colors.errorLighter,
     border: `1px solid ${theme.colors.errorLighter}`,
+  },
+  warning: {
+    backgroundColor: theme.colors.warningDark,
+    color: theme.colors.warningLighter,
+    border: `1px solid ${theme.colors.warningLight}`,
   },
 };
 
