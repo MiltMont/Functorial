@@ -23,3 +23,10 @@
 - [ ] Grid
 - [x] Box
 - [ ] Typography
+
+### Components
+
+- [ ] Article Card (Mobile)
+- [ ] Lecture Note Card (Mobile)
+
+- [x] Badge (Add variants)
