@@ -4,6 +4,7 @@ import theme from "../styles/Theme";
 import ArticleCard from "../components/ArticleCard";
 import Button from "../components/Button";
 import LectureCard from "../components/LectureCard";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -53,12 +54,65 @@ export default function Home() {
         slug="formalizing-topology-in-lean"
         tag="Topology"
       />
+      <ArticleCard
+        title="Formalizing Topology in Lean"
+        summary="In this post we explore the distinction between formalization and implementation. As our main tool, we use Lean 3."
+        date="May 23, 2023"
+        slug="formalizing-topology-in-lean"
+        tag="Topology"
+      />
+      <ArticleCard
+        title="Formalizing Topology in Lean"
+        summary="In this post we explore the distinction between formalization and implementation. As our main tool, we use Lean 3."
+        date="May 23, 2023"
+        slug="formalizing-topology-in-lean"
+        tag="Topology"
+      />
+      <Link href={"/articles"} style={{ textDecoration: "none" }}>
+        <Flex
+          justifyContent="center"
+          alignContent="stretch"
+          style={{
+            marginLeft: theme.space[1],
+            marginRight: theme.space[1],
+          }}
+        >
+          <Button fill="outline" width="full">
+            Read all articles
+          </Button>
+        </Flex>
+      </Link>
 
       <LectureCard
         title="Functional Analysis I"
         slug="functional-analysis"
         docType={["PDF", "LaTex"]}
       />
+      <LectureCard
+        title="Functional Analysis I"
+        slug="functional-analysis"
+        docType={["PDF", "LaTex"]}
+      />
+      <LectureCard
+        title="Functional Analysis I"
+        slug="functional-analysis"
+        docType={["PDF", "LaTex"]}
+      />
+
+      <Link href={"/articles"} style={{ textDecoration: "none" }}>
+        <Flex
+          justifyContent="center"
+          alignContent="stretch"
+          style={{
+            marginLeft: theme.space[1],
+            marginRight: theme.space[1],
+          }}
+        >
+          <Button fill="outline" width="full">
+            Read all articles
+          </Button>
+        </Flex>
+      </Link>
     </>
   );
 }

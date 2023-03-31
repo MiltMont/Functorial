@@ -90,6 +90,15 @@ const variants = {
       `,
     },
   },
+
+  width: {
+    full: {
+      width: "100%",
+    },
+    auto: {
+      width: "",
+    },
+  },
 };
 
 const Style = styled.button<Props>`
@@ -97,6 +106,7 @@ const Style = styled.button<Props>`
     variants[props.variant][props.fill].backgroundColor};
   color: ${(props) => variants[props.variant][props.fill].color};
   border: ${(props) => variants[props.variant][props.fill].border};
+  width: ${(props) => variants.width[props.width].width};
 
   font-weight: ${theme.fontWeight[2]};
   border-radius: ${theme.borderRadius[2]};
