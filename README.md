@@ -27,7 +27,7 @@
 ### Components
 
 - [x] Article Card (Mobile)
-- [ ] Lecture Note Card (Mobile)
+- [x] Lecture Note Card (Mobile)
 
 - [x] Badge (Add variants)
 - [x] Button (Add outline and color variants)

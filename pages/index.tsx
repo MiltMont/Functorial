@@ -42,8 +42,8 @@ export default function Home() {
           has to be.
         </Box>
         <Flex gap={theme.space[1]}>
-          <Button variant="gray">About</Button>
-          <Button variant="grayOutline">Contact</Button>
+          <Button>About</Button>
+          <Button fill="outline">Contact</Button>
         </Flex>
       </Box>
       <ArticleCard
