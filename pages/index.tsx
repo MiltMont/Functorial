@@ -8,6 +8,7 @@ import Link from "next/link";
 import Spacer from "../components/utils/Spacer";
 import { Articles } from "../utils/dummyArticle";
 import { Lectures } from "../utils/dummyLecture";
+import Text from "../components/utils/Text";
 
 export default function Home() {
   return (
@@ -50,7 +51,12 @@ export default function Home() {
           <Button fill="outline">Contact</Button>
         </Flex>
       </Box>
-      <Spacer size={4} />
+      <Spacer size={2} />
+      <Box style={{ marginLeft: theme.space[1], marginRight: theme.space[1] }}>
+        <Text as="h1" size={7} weight={1}>
+          Latest Articles
+        </Text>
+      </Box>
       {Articles.map((article) => (
         <ArticleCard
           title={article.title}
@@ -73,16 +79,22 @@ export default function Home() {
           <Button width="full">Read all articles</Button>
         </Flex>
       </Link>
-      <Spacer size={4} />
+      <Spacer size={2} />
+      <Box style={{ marginLeft: theme.space[1], marginRight: theme.space[1] }}>
+        <Text as="h1" size={7} weight={1}>
+          Lecture Notes
+        </Text>
+      </Box>
       {Lectures.map((lecture) => (
         <LectureCard
           title={lecture.title}
           slug={lecture.slug}
           docType={lecture.docType}
+          key={lecture.slug}
         />
       ))}
 
-      <Link href={"/articles"} style={{ textDecoration: "none" }}>
+      <Link href={"/lectures"} style={{ textDecoration: "none" }}>
         <Flex
           justifyContent="center"
           alignContent="stretch"
@@ -91,7 +103,7 @@ export default function Home() {
             marginRight: theme.space[1],
           }}
         >
-          <Button width="full">Read all articles</Button>
+          <Button width="full">Read all lectures</Button>
         </Flex>
       </Link>
       <Spacer size={4} />

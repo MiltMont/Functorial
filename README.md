@@ -22,7 +22,7 @@
 - [x] Flex
 - [ ] Grid
 - [x] Box
-- [ ] Typography
+- [x] Typography
 - [x] Spacer
 
 ### Components
