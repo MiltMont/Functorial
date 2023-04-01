@@ -5,6 +5,9 @@ import ArticleCard from "../components/ArticleCard";
 import Button from "../components/Button";
 import LectureCard from "../components/LectureCard";
 import Link from "next/link";
+import Spacer from "../components/utils/Spacer";
+import { Articles } from "../utils/dummyArticle";
+import { Lectures } from "../utils/dummyLecture";
 
 export default function Home() {
   return (
@@ -47,27 +50,17 @@ export default function Home() {
           <Button fill="outline">Contact</Button>
         </Flex>
       </Box>
-      <ArticleCard
-        title="Formalizing Topology in Lean"
-        summary="In this post we explore the distinction between formalization and implementation. As our main tool, we use Lean 3."
-        date="May 23, 2023"
-        slug="formalizing-topology-in-lean"
-        tag="Topology"
-      />
-      <ArticleCard
-        title="Formalizing Topology in Lean"
-        summary="In this post we explore the distinction between formalization and implementation. As our main tool, we use Lean 3."
-        date="May 23, 2023"
-        slug="formalizing-topology-in-lean"
-        tag="Topology"
-      />
-      <ArticleCard
-        title="Formalizing Topology in Lean"
-        summary="In this post we explore the distinction between formalization and implementation. As our main tool, we use Lean 3."
-        date="May 23, 2023"
-        slug="formalizing-topology-in-lean"
-        tag="Topology"
-      />
+      <Spacer size={4} />
+      {Articles.map((article) => (
+        <ArticleCard
+          title={article.title}
+          summary={article.summary}
+          date={article.date}
+          slug={article.slug}
+          tag={article.tag}
+          key={article.slug}
+        />
+      ))}
       <Link href={"/articles"} style={{ textDecoration: "none" }}>
         <Flex
           justifyContent="center"
@@ -77,27 +70,17 @@ export default function Home() {
             marginRight: theme.space[1],
           }}
         >
-          <Button fill="outline" width="full">
-            Read all articles
-          </Button>
+          <Button width="full">Read all articles</Button>
         </Flex>
       </Link>
-
-      <LectureCard
-        title="Functional Analysis I"
-        slug="functional-analysis"
-        docType={["PDF", "LaTex"]}
-      />
-      <LectureCard
-        title="Functional Analysis I"
-        slug="functional-analysis"
-        docType={["PDF", "LaTex"]}
-      />
-      <LectureCard
-        title="Functional Analysis I"
-        slug="functional-analysis"
-        docType={["PDF", "LaTex"]}
-      />
+      <Spacer size={4} />
+      {Lectures.map((lecture) => (
+        <LectureCard
+          title={lecture.title}
+          slug={lecture.slug}
+          docType={lecture.docType}
+        />
+      ))}
 
       <Link href={"/articles"} style={{ textDecoration: "none" }}>
         <Flex
@@ -108,11 +91,10 @@ export default function Home() {
             marginRight: theme.space[1],
           }}
         >
-          <Button fill="outline" width="full">
-            Read all articles
-          </Button>
+          <Button width="full">Read all articles</Button>
         </Flex>
       </Link>
+      <Spacer size={4} />
     </>
   );
 }

@@ -23,6 +23,7 @@
 - [ ] Grid
 - [x] Box
 - [ ] Typography
+- [x] Spacer
 
 ### Components
 
@@ -34,4 +35,4 @@
 
 ## Errors
 
-- [ ] Fix the unique props error. (Josh Post)
+- [x] Fix the unique props error. (Josh Post)
