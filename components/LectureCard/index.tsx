@@ -7,6 +7,7 @@ import Badge from "../Badge/index";
 import { base } from "../../utils/base";
 import { RoundButton } from "../graphics/RoundButton";
 import Link from "next/link";
+import Icon from "../utils/Icon";
 
 type Props = {
   title: string;
@@ -31,12 +32,11 @@ const LectureCard: FC<Props> = ({ title, slug, image, docType }) => {
         <Flex justifyContent="space-between" alignItems="end">
           <Flex gap={base(1 / 2)}>
             {docType.map((type, i) => (
-              // Fix this!!
               <Badge content={type} variant="warning" key={i} />
             ))}
           </Flex>
           <Link href={`lectures/${slug}`}>
-            <RoundButton />
+            <Icon icon="round-button" button />
           </Link>
         </Flex>
       </Box>

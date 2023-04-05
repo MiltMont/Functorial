@@ -42,6 +42,7 @@ export default function Home() {
             title={"Copied!"}
             fill="outline"
             onClick={() => navigator.clipboard.writeText("miltgonmont@pm.me")}
+            description="My e-mail address has been copied to your clipboard."
             altText="Copy my e-mail address to your clipboard."
             action="close"
           >

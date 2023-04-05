@@ -6,6 +6,7 @@ import Flex from "../utils/Flex";
 import Badge from "../Badge";
 import { Card } from "./css";
 import Link from "next/link";
+import Icon from "../utils/Icon";
 
 type Props = {
   title: string;
@@ -40,7 +41,7 @@ const ArticleCard: FC<Props> = ({ title, summary, date, slug, tag }) => {
             <Badge content={tag} />
           </Flex>
           <Link href={`articles/${slug}`}>
-            <RoundButton />
+            <Icon icon="round-button" button />
           </Link>
         </Flex>
       </Box>

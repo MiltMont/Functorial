@@ -15,23 +15,18 @@ import {
   X,
   Copy,
 } from "react-feather";
+import { RoundButton } from "../graphics/RoundButton";
 
 type Props = {
   icon: string;
   size?: number;
   color?: string;
   strokeWidth?: number;
+  button?: boolean;
 };
 
-const Icon: FC<Props> = ({
-  icon,
-  size = 20,
-  color = theme.colors.foreground,
-  strokeWidth = 2,
-}) => {
-  const props = { icon, size, color, strokeWidth };
-
-  switch (icon) {
+const iconSelector: FC<Props> = (props) => {
+  switch (props.icon) {
     case "home":
       return <Home {...props} />;
     case "archive":
@@ -58,6 +53,23 @@ const Icon: FC<Props> = ({
       return <X {...props} />;
     case "copy":
       return <Copy {...props} />;
+    case "round-button":
+      return <RoundButton />;
+  }
+};
+
+const Icon: FC<Props> = ({
+  icon,
+  size = 20,
+  color = theme.colors.foreground,
+  strokeWidth = 2,
+  button = false,
+}) => {
+  const props = { icon, size, color, strokeWidth, button };
+  if (button) {
+    return <button style={{ all: "unset" }}>{iconSelector(props)}</button>;
+  } else {
+    return iconSelector(props);
   }
 };
 

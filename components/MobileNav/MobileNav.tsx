@@ -131,6 +131,7 @@ const MobileNav: FC = () => {
                           ? theme.colors.foreground
                           : theme.colors.accent6
                       }
+                      button
                     />
                     {item.label}
                   </Style.Item>
@@ -146,7 +147,7 @@ const MobileNav: FC = () => {
                 key={item.label}
               >
                 <Style.Item state="inactive">
-                  <Icon icon={item.icon} color={theme.colors.accent6} />
+                  <Icon icon={item.icon} color={theme.colors.accent6} button />
 
                   {item.label}
                 </Style.Item>
@@ -171,6 +172,7 @@ const MobileNav: FC = () => {
                           ? theme.colors.foreground
                           : theme.colors.accent6
                       }
+                      button
                     />
                     {item.label}
                   </Style.Item>
