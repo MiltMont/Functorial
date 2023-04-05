@@ -20,7 +20,7 @@
 ### Utility components
 
 - [x] Flex
-- [ ] Grid
+- [x] Grid
 - [x] Box
 - [x] Typography
 - [x] Spacer

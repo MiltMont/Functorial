@@ -26,7 +26,14 @@ type Props = {
   weight?: 1 | 2 | 3 | 4;
   transform?: "capitalize" | "uppercase" | "lowercase" | "initial";
   align?: "left" | "center" | "right";
-  color?: string;
+  color?:
+    | "foreground"
+    | "background"
+    | "brand"
+    | "error"
+    | "success"
+    | "warning"
+    | string;
   truncate?: number | boolean;
   title?: string; //If text is `truncated`, this should be the full text.
   wrap?: boolean;
@@ -63,7 +70,7 @@ const Text: FC<Props> = ({
   weight = 2,
   transform,
   align = "left",
-  color = theme.colors.foreground,
+  color = "foreground",
   truncate,
   title,
   wrap,
@@ -77,7 +84,7 @@ const Text: FC<Props> = ({
     weight={weight}
     transform={transform}
     align={align}
-    color={color}
+    color={theme.colors[color] || color}
     truncate={truncate}
     title={title}
     wrap={wrap}

@@ -9,6 +9,7 @@ import Spacer from "../components/utils/Spacer";
 import { Articles } from "../utils/dummyArticle";
 import { Lectures } from "../utils/dummyLecture";
 import Text from "../components/utils/Text";
+import Grid from "../components/utils/Grid";
 
 export default function Home() {
   return (
@@ -23,29 +24,16 @@ export default function Home() {
           borderBottom: `1px solid ${theme.colors.accent3}`,
         }}
       >
-        <Box
-          style={{
-            fontSize: theme.fontSize[7],
-            fontWeight: theme.fontWeight[4],
-            marginBottom: theme.space[1],
-            color: "transparent !important",
-            WebkitTextStrokeColor: theme.colors.foreground,
-            WebkitTextStrokeWidth: "2px",
-          }}
-        >
+        <Text as="h1" size={7} weight={4}>
           Write about mathematics in an easier manner.
-        </Box>
-        <Box
-          style={{
-            fontSize: theme.fontSize[2],
-            marginBottom: theme.space[1],
-            color: theme.colors.accent7,
-          }}
-        >
+        </Text>
+        <Spacer size={1} />
+        <Text size={2} weight={1} color="accent7">
           This blog template is designed to give you the necessary tools to
           write about technical matters without making it more difficult than in
           has to be.
-        </Box>
+        </Text>
+        <Spacer size={1} />
         <Flex gap={theme.space[1]}>
           <Button>About</Button>
           <Button fill="outline">Contact</Button>
@@ -69,8 +57,6 @@ export default function Home() {
       ))}
       <Link href={"/articles"} style={{ textDecoration: "none" }}>
         <Flex
-          justifyContent="center"
-          alignContent="stretch"
           style={{
             marginLeft: theme.space[1],
             marginRight: theme.space[1],
