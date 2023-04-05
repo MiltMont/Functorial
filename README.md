@@ -39,7 +39,7 @@
 ## Mobile Menu
 
 - [ ] Enable Scrolling
-- [ ] Add icons to items
+- [x] Add icons to items
 
 ## Errors
 
