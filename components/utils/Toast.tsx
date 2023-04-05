@@ -38,10 +38,11 @@ const Toast: FC<Props> = ({
 
       <ToastComponent.Root
         style={{
-          backgroundColor: theme.colors.accent7,
-          color: theme.colors.background,
+          backgroundColor: theme.colors.background,
+          color: theme.colors.foreground,
           padding: theme.space[1],
 
+          margin: theme.space[1],
           borderRadius: theme.borderRadius[2],
           border: `1px solid ${theme.colors.accent3}`,
           display: "grid",
@@ -54,13 +55,21 @@ const Toast: FC<Props> = ({
         onOpenChange={setOpen}
       >
         <ToastComponent.Title
-          style={{ gridArea: "title", fontWeight: theme.fontWeight[4] }}
+          style={{
+            gridArea: "title",
+            fontWeight: theme.fontWeight[4],
+            fontSize: theme.fontSize[3],
+          }}
           className="ToastTitle"
         >
           {title}
         </ToastComponent.Title>
         <ToastComponent.Description
-          style={{ gridArea: "description", color: theme.colors.accent3 }}
+          style={{
+            gridArea: "description",
+            color: theme.colors.accent3,
+            fontSize: theme.fontSize[2],
+          }}
           asChild
         >
           {description && <p>{description}</p>}
@@ -73,11 +82,11 @@ const Toast: FC<Props> = ({
           <button
             style={{
               all: "unset",
-              border: `2px solid ${theme.colors.background}`,
+              border: `2px solid ${theme.colors.foreground}`,
               borderRadius: theme.borderRadius[1],
             }}
           >
-            <Icon icon="close" color={theme.colors.background} size={20} />
+            <Icon icon="close" color={theme.colors.foreground} size={20} />
           </button>
         </ToastComponent.Action>
       </ToastComponent.Root>
@@ -88,7 +97,6 @@ const Toast: FC<Props> = ({
           flexDirection: "column",
           width: "100%",
           padding: "0",
-          marginBottom: theme.space[1],
 
           position: "fixed",
           bottom: 0,

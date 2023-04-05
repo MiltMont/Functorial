@@ -40,6 +40,7 @@ export default function Home() {
 
           <Toast
             title={"Copied!"}
+            description="My e-mail address has been copied to your clipboard."
             fill="outline"
             onClick={() => navigator.clipboard.writeText("miltgonmont@pm.me")}
           >
