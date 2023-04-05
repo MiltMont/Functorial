@@ -40,6 +40,7 @@ export const Style = {
   Item: styled.div<Props>`
     display: flex;
     gap: ${theme.space[1]};
+    align-items: center;
 
     font-size: ${theme.fontSize[3]};
     font-weight: ${theme.fontWeight[1]};

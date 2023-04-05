@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
         color: ${theme.colors.background};
     }
 
+   
 /*
 1. Use a more-intuitive box-sizing model.
 */
