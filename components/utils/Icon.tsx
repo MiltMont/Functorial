@@ -12,20 +12,24 @@ import {
   Music,
   PenTool,
   Package,
+  X,
+  Copy,
 } from "react-feather";
 
 type Props = {
   icon: string;
   size?: number;
   color?: string;
+  strokeWidth?: number;
 };
 
 const Icon: FC<Props> = ({
   icon,
   size = 20,
   color = theme.colors.foreground,
+  strokeWidth = 2,
 }) => {
-  const props = { icon, size, color };
+  const props = { icon, size, color, strokeWidth };
 
   switch (icon) {
     case "home":
@@ -50,6 +54,10 @@ const Icon: FC<Props> = ({
       return <PenTool {...props} />;
     case "package":
       return <Package {...props} />;
+    case "close":
+      return <X {...props} />;
+    case "copy":
+      return <Copy {...props} />;
   }
 };
 

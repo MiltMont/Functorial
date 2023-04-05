@@ -25,6 +25,12 @@
 - [x] Typography
 - [x] Spacer
 - [x] Icon Selector
+- [x] Toast
+
+### Toast
+
+- [ ] Add better styling.
+- [ ] Refactor.
 
 ### Components
 

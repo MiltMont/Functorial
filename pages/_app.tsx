@@ -4,6 +4,7 @@ import theme from "../styles/Theme";
 import { ThemeProvider } from "styled-components";
 import { Inter } from "next/font/google";
 import MobileNav from "../components/layout/MobileNav";
+import * as Toast from "@radix-ui/react-toast";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,12 +13,14 @@ const inter = Inter({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={inter.className}>
-      <MobileNav />
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </main>
+    <Toast.Provider>
+      <main className={inter.className}>
+        <MobileNav />
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </main>
+    </Toast.Provider>
   );
 }

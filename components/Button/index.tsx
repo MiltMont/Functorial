@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Style from "./css";
 import Link from "next/link";
+import { MouseEventHandler } from "react";
 
 export type Props = {
   variant?: "standard" | "success" | "warning" | "error";
@@ -8,6 +9,7 @@ export type Props = {
   children?: React.ReactNode;
   width?: "full" | "auto";
   href?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 };
 
 const Button: FC<Props> = ({
@@ -16,6 +18,7 @@ const Button: FC<Props> = ({
   width = "auto",
   href,
   children,
+  onClick,
 }) => {
   if (href) {
     return (
@@ -27,7 +30,7 @@ const Button: FC<Props> = ({
     );
   } else {
     return (
-      <Style fill={fill} variant={variant} width={width}>
+      <Style fill={fill} variant={variant} width={width} onClick={onClick}>
         {children}
       </Style>
     );

@@ -9,6 +9,8 @@ import Spacer from "../components/utils/Spacer";
 import { Articles } from "../utils/dummyArticle";
 import { Lectures } from "../utils/dummyLecture";
 import Text from "../components/utils/Text";
+import Toast from "../components/utils/Toast";
+import Icon from "../components/utils/Icon";
 
 export default function Home() {
   return (
@@ -35,9 +37,15 @@ export default function Home() {
         <Spacer size={1} />
         <Flex gap={theme.space[1]}>
           <Button href="/about">About</Button>
-          <Button fill="outline" href="contact">
-            Contact
-          </Button>
+
+          <Toast
+            title={"Copied!"}
+            fill="outline"
+            onClick={() => navigator.clipboard.writeText("miltgonmont@pm.me")}
+          >
+            <Icon icon="copy" />
+            E-Mail
+          </Toast>
         </Flex>
       </Box>
       <Spacer size={2} />

@@ -102,6 +102,10 @@ const variants = {
 };
 
 const Style = styled.button<Props>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: ${theme.space[1]};
   background-color: ${(props) =>
     variants[props.variant][props.fill].backgroundColor};
   color: ${(props) => variants[props.variant][props.fill].color};
