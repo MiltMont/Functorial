@@ -19,12 +19,17 @@ export const S = {
   Viewport: styled(ToastComponent.Viewport)`
     display: flex;
     flex-direction: column;
-    width: 100%;
+
+    @media (max-width: ${theme.breakpoints.md}) {
+      width: 100%;
+    }
+
+    width: fit-content;
     padding: 0;
 
     position: fixed;
     bottom: 0;
-    left: 0;
+    right: 0;
 
     font-size: ${theme.fontSize[2]};
     list-style: none;

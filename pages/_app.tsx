@@ -3,7 +3,7 @@ import GlobalStyle from "../styles/GlobalStyle";
 import theme from "../styles/Theme";
 import { ThemeProvider } from "styled-components";
 import { Inter } from "next/font/google";
-import MobileNav from "../components/layout/MobileNav";
+import MobileNav from "../components/MobileNav/MobileNav";
 import * as Toast from "@radix-ui/react-toast";
 
 const inter = Inter({
