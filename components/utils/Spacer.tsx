@@ -6,7 +6,7 @@ type Props = {
 };
 
 const Spacer = styled.div<Props>`
-  height: ${(props) => theme.space[props.size] || props.size[1]};
+  height: ${(props) => theme.space[props.size] || theme.space[1]};
 `;
 
 export default Spacer;

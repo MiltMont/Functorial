@@ -38,7 +38,8 @@ export const Style = {
     font-weight: ${theme.fontWeight[1]};
     border-radius: ${theme.borderRadius[1]};
     padding-left: ${theme.space[1]};
-    padding-top: ${base(1 / 2)};
+    padding-top: ${base(1 / 4)};
+    padding-bottom: ${base(1 / 4)};
     margin-bottom: ${base(1 / 2)};
 
     background-color: ${(props) => variant[props.state].backgroundColor};

@@ -1,4 +1,31 @@
 export const Global = {
+  navigation: [
+    {
+      label: "Home",
+      url: "/",
+      icon: "home",
+    },
+    {
+      label: "Articles",
+      url: "/articles",
+      icon: "book",
+    },
+    {
+      label: "Lecture Notes",
+      url: "/lectures",
+      icon: "book-open",
+    },
+    {
+      label: "Projects",
+      url: "/projects",
+      icon: "code",
+    },
+    {
+      label: "About",
+      url: "/about",
+      icon: "user",
+    },
+  ],
   socialMedia: [
     {
       label: "Twitter",
