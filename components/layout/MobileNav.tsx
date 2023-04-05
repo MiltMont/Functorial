@@ -40,9 +40,7 @@ const MobileNav: FC = () => {
           justifyContent="space-between"
         >
           <Link href={"/"}>
-            <Box>
-              <LogoSM />
-            </Box>
+            <LogoSM />
           </Link>
 
           <AlertDialog.Trigger asChild>
@@ -93,9 +91,7 @@ const MobileNav: FC = () => {
             justifyContent="space-between"
           >
             <Link href={"/"}>
-              <Box>
-                <LogoSM />
-              </Box>
+              <LogoSM />
             </Link>
             <AlertDialog.Cancel asChild>
               <Flex

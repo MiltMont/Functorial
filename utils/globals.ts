@@ -50,5 +50,10 @@ export const Global = {
       url: "/books",
       icon: "book",
     },
+    {
+      label: "Design",
+      url: "/design",
+      icon: "package",
+    },
   ],
 };

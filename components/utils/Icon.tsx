@@ -11,6 +11,7 @@ import {
   GitHub,
   Music,
   PenTool,
+  Package,
 } from "react-feather";
 
 type Props = {
@@ -45,6 +46,8 @@ const Icon: FC<Props> = ({
       return <Music size={size} color={color} />;
     case "pen-tool":
       return <PenTool size={size} color={color} />;
+    case "package":
+      return <Package size={size} color={color} />;
   }
 };
 
