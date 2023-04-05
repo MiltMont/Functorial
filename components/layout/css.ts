@@ -11,11 +11,15 @@ const variant = {
     color: theme.colors.foreground,
     backgroundColor: theme.colors.accent1,
     border: `1px solid ${theme.colors.accent3}`,
+    paddingTop: base(1 / 2),
+    paddingBottom: base(1 / 2),
   },
   inactive: {
     color: theme.colors.accent6,
     backgroundColor: "none",
     border: "none",
+    paddingTop: base(1 / 4),
+    paddingBottom: base(1 / 4),
   },
 };
 
@@ -34,12 +38,15 @@ export const Style = {
   `,
 
   Item: styled.div<Props>`
+    display: flex;
+    gap: ${theme.space[1]};
+
     font-size: ${theme.fontSize[3]};
     font-weight: ${theme.fontWeight[1]};
     border-radius: ${theme.borderRadius[1]};
     padding-left: ${theme.space[1]};
-    padding-top: ${base(1 / 4)};
-    padding-bottom: ${base(1 / 4)};
+    padding-top: ${(props) => variant[props.state].paddingTop};
+    padding-bottom: ${(props) => variant[props.state].paddingBottom};
     margin-bottom: ${base(1 / 2)};
 
     background-color: ${(props) => variant[props.state].backgroundColor};

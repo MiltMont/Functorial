@@ -8,7 +8,7 @@ export const Global = {
     {
       label: "Articles",
       url: "/articles",
-      icon: "book",
+      icon: "pen-tool",
     },
     {
       label: "Lecture Notes",
@@ -18,7 +18,7 @@ export const Global = {
     {
       label: "Projects",
       url: "/projects",
-      icon: "code",
+      icon: "terminal",
     },
     {
       label: "About",
@@ -38,14 +38,9 @@ export const Global = {
       icon: "github",
     },
     {
-      label: "LinkedIn",
-      url: "",
-      icon: "linkedin",
-    },
-    {
       label: "Spotify",
       url: "",
-      icon: "spotify",
+      icon: "music",
     },
   ],
 
@@ -54,11 +49,6 @@ export const Global = {
       label: "Books",
       url: "/books",
       icon: "book",
-    },
-    {
-      label: "Podcasts",
-      url: "/podcasts",
-      icon: "podcast",
     },
   ],
 };

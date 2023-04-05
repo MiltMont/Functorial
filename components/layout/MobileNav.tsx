@@ -12,6 +12,7 @@ import { Inter } from "next/font/google";
 import { Global } from "../../utils/globals";
 import Spacer from "../utils/Spacer";
 import { useRouter } from "next/router";
+import Icon from "../utils/Icon";
 
 const Nav = styled.nav`
   @media (min-width: ${theme.breakpoints.md}) {
@@ -127,6 +128,14 @@ const MobileNav: FC = () => {
                   <Style.Item
                     state={router.route === item.url ? "active" : "inactive"}
                   >
+                    <Icon
+                      icon={item.icon}
+                      color={
+                        router.route === item.url
+                          ? theme.colors.foreground
+                          : theme.colors.accent6
+                      }
+                    />
                     {item.label}
                   </Style.Item>
                 </AlertDialog.Action>
@@ -140,7 +149,11 @@ const MobileNav: FC = () => {
                 style={{ textDecoration: "none" }}
                 key={item.label}
               >
-                <Style.Item state="inactive">{item.label}</Style.Item>
+                <Style.Item state="inactive">
+                  <Icon icon={item.icon} color={theme.colors.accent6} />
+
+                  {item.label}
+                </Style.Item>
               </Link>
             ))}
             <Spacer />
@@ -155,6 +168,14 @@ const MobileNav: FC = () => {
                   <Style.Item
                     state={router.route === item.url ? "active" : "inactive"}
                   >
+                    <Icon
+                      icon={item.icon}
+                      color={
+                        router.route === item.url
+                          ? theme.colors.foreground
+                          : theme.colors.accent6
+                      }
+                    />
                     {item.label}
                   </Style.Item>
                 </AlertDialog.Action>
