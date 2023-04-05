@@ -9,6 +9,8 @@ import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import { X, Menu } from "react-feather";
 import { Style } from "./css";
 import { Inter } from "next/font/google";
+import { Global } from "../../utils/globals";
+import Spacer from "../utils/Spacer";
 
 const Nav = styled.nav`
   @media (min-width: ${theme.breakpoints.md}) {
@@ -111,7 +113,22 @@ const MobileNav: FC = () => (
         </Flex>
         <Style.Container>
           <Style.Section>Social Media</Style.Section>
+          {Global.socialMedia.map((item) => (
+            <Link href={item.url} style={{ textDecoration: "none" }}>
+              <Style.Item key={item.label} state="inactive">
+                {item.label}
+              </Style.Item>
+            </Link>
+          ))}
+          <Spacer size={1} />
           <Style.Section>Resources</Style.Section>
+          {Global.resources.map((item) => (
+            <Link href={item.url} style={{ textDecoration: "none" }}>
+              <Style.Item key={item.label} state="inactive">
+                {item.label}
+              </Style.Item>
+            </Link>
+          ))}
         </Style.Container>
       </AlertDialog.Content>
     </AlertDialog.Portal>

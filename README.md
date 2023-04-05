@@ -24,6 +24,7 @@
 - [x] Box
 - [x] Typography
 - [x] Spacer
+- [ ] Icon Selector
 
 ### Components
 
