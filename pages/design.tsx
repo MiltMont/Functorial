@@ -6,8 +6,6 @@ import Button from "../components/Button";
 import LectureCard from "../components/LectureCard";
 import Link from "next/link";
 import Spacer from "../components/utils/Spacer";
-import { Articles } from "../utils/dummyArticle";
-import { Lectures } from "../utils/dummyLecture";
 import Text from "../components/utils/Text";
 
 export default function Design() {

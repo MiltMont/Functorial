@@ -9,7 +9,6 @@ import Spacer from "../components/utils/Spacer";
 import { Articles } from "../utils/dummyArticle";
 import { Lectures } from "../utils/dummyLecture";
 import Text from "../components/utils/Text";
-import Grid from "../components/utils/Grid";
 
 export default function Home() {
   return (
@@ -35,8 +34,10 @@ export default function Home() {
         </Text>
         <Spacer size={1} />
         <Flex gap={theme.space[1]}>
-          <Button>About</Button>
-          <Button fill="outline">Contact</Button>
+          <Button href="/about">About</Button>
+          <Button fill="outline" href="contact">
+            Contact
+          </Button>
         </Flex>
       </Box>
       <Spacer size={2} />

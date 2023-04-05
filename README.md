@@ -36,10 +36,14 @@
 
 - [ ] Mobile Menu
 
-## Mobile Menu
+### Mobile Menu
 
 - [ ] Enable Scrolling
 - [x] Add icons to items
+
+### Button
+
+- [ ] Full width and href properties dont work as intended when used simultaneously.
 
 ## Errors
 

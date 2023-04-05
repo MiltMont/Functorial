@@ -25,29 +25,31 @@ const Icon: FC<Props> = ({
   size = 20,
   color = theme.colors.foreground,
 }) => {
+  const props = { icon, size, color };
+
   switch (icon) {
     case "home":
-      return <Home size={size} color={color} />;
+      return <Home {...props} />;
     case "archive":
-      return <Archive size={size} color={color} />;
+      return <Archive {...props} />;
     case "book":
-      return <Book size={size} color={color} />;
+      return <Book {...props} />;
     case "book-open":
-      return <BookOpen size={size} color={color} />;
+      return <BookOpen {...props} />;
     case "terminal":
-      return <Terminal size={size} color={color} />;
+      return <Terminal {...props} />;
     case "user":
-      return <User size={size} color={color} />;
+      return <User {...props} />;
     case "twitter":
-      return <Twitter size={size} color={color} />;
+      return <Twitter {...props} />;
     case "github":
-      return <GitHub size={size} color={color} />;
+      return <GitHub {...props} />;
     case "music":
-      return <Music size={size} color={color} />;
+      return <Music {...props} />;
     case "pen-tool":
-      return <PenTool size={size} color={color} />;
+      return <PenTool {...props} />;
     case "package":
-      return <Package size={size} color={color} />;
+      return <Package {...props} />;
   }
 };
 

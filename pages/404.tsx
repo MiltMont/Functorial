@@ -5,7 +5,6 @@ import Spacer from "../components/utils/Spacer";
 import Text from "../components/utils/Text";
 import theme from "../styles/Theme";
 import * as Separator from "@radix-ui/react-separator";
-import Icon from "../components/utils/Icon";
 
 export default function Custom404() {
   return (
