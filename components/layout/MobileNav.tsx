@@ -118,10 +118,13 @@ const MobileNav: FC = () => {
           <Style.Container>
             <Style.Section>Navigation</Style.Section>
             {Global.navigation.map((item) => (
-              <Link href={item.url} style={{ textDecoration: "none" }}>
+              <Link
+                href={item.url}
+                style={{ textDecoration: "none" }}
+                key={item.label}
+              >
                 <AlertDialog.Action asChild>
                   <Style.Item
-                    key={item.label}
                     state={router.route === item.url ? "active" : "inactive"}
                   >
                     {item.label}
@@ -132,19 +135,24 @@ const MobileNav: FC = () => {
             <Spacer />
             <Style.Section>Social Media</Style.Section>
             {Global.socialMedia.map((item) => (
-              <Link href={item.url} style={{ textDecoration: "none" }}>
-                <Style.Item key={item.label} state="inactive">
-                  {item.label}
-                </Style.Item>
+              <Link
+                href={item.url}
+                style={{ textDecoration: "none" }}
+                key={item.label}
+              >
+                <Style.Item state="inactive">{item.label}</Style.Item>
               </Link>
             ))}
             <Spacer />
             <Style.Section>Resources</Style.Section>
             {Global.resources.map((item) => (
-              <Link href={item.url} style={{ textDecoration: "none" }}>
+              <Link
+                href={item.url}
+                style={{ textDecoration: "none" }}
+                key={item.label}
+              >
                 <AlertDialog.Action asChild>
                   <Style.Item
-                    key={item.label}
                     state={router.route === item.url ? "active" : "inactive"}
                   >
                     {item.label}

@@ -36,6 +36,11 @@
 
 - [ ] Mobile Menu
 
+## Mobile Menu
+
+- [ ] Enable Scrolling
+- [ ] Add icons to items
+
 ## Errors
 
 - [x] Fix the unique props error. (Josh Post)
