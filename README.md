@@ -30,7 +30,8 @@
 ### Toast
 
 - [ ] Add better styling.
-- [ ] Refactor.
+- [ ] Add variants.
+- [x] Refactor.
 
 ### Components
 

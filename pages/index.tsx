@@ -9,7 +9,7 @@ import Spacer from "../components/utils/Spacer";
 import { Articles } from "../utils/dummyArticle";
 import { Lectures } from "../utils/dummyLecture";
 import Text from "../components/utils/Text";
-import Toast from "../components/utils/Toast";
+import Toast from "../components/Toast";
 import Icon from "../components/utils/Icon";
 
 export default function Home() {
@@ -43,6 +43,8 @@ export default function Home() {
             description="My e-mail address has been copied to your clipboard."
             fill="outline"
             onClick={() => navigator.clipboard.writeText("miltgonmont@pm.me")}
+            altText="Copy my e-mail address to your clipboard."
+            action="close"
           >
             <Icon icon="copy" />
             E-Mail
