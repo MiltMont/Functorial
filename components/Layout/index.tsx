@@ -11,7 +11,7 @@ const S = {
       padding: 0 ${(p) => p.theme.space[1]};
     }
     @media (min-width: ${(p) => p.theme.breakpoints.md}) {
-      padding: 0 ${(p) => p.theme.space[8]};
+      padding: 0 ${(p) => p.theme.space[12]};
     }
   `,
 };

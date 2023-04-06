@@ -33,11 +33,11 @@ export default function Home() {
             <Button href="/about">About</Button>
 
             <Toast
-              title={"Copied!"}
+              title={"Copied"}
               fill="outline"
               onClick={() => navigator.clipboard.writeText("miltgonmont@pm.me")}
-              description="My e-mail address has been copied to your clipboard."
-              altText="Copy my e-mail address to your clipboard."
+              description="My e-mail address has been copied to your clipboard"
+              altText="Copy my e-mail address to your clipboard"
             >
               <Icon icon="copy" />
               E-Mail

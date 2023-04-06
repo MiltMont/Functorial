@@ -29,17 +29,17 @@ export const Global = {
   socialMedia: [
     {
       label: "Twitter",
-      url: "https://twitter.com/",
+      url: "https://twitter.com/MontMilt",
       icon: "twitter",
     },
     {
       label: "GitHub",
-      url: "",
+      url: "https://github.com/MiltMont",
       icon: "github",
     },
     {
       label: "Spotify",
-      url: "",
+      url: "https://open.spotify.com/user/defectzz",
       icon: "music",
     },
   ],
