@@ -121,6 +121,8 @@ const Style = styled.button<Props>`
   &:hover {
     ${(props) => variants[props.variant][props.fill].hover}
   }
+
+  cursor: pointer;
 `;
 
 export default Style;

@@ -23,18 +23,11 @@ const variant = {
     color: theme.colors.foreground,
     backgroundColor: theme.colors.accent1,
     border: `1px solid ${theme.colors.accent3}`,
-    paddingTop: base(1 / 2),
-    paddingBottom: base(1 / 2),
-    padding: theme.space[2],
-    width: "100%",
   },
   inactive: {
     color: theme.colors.accent6,
     backgroundColor: "none",
     border: "none",
-    paddingTop: base(1 / 4),
-    paddingBottom: base(1 / 4),
-    width: "100%",
   },
 };
 
@@ -73,8 +66,8 @@ const S = {
     border-radius: ${theme.borderRadius[1]};
     padding-left: ${theme.space[1]};
     padding-right: ${theme.space[1]};
-    padding-top: ${(props) => variant[props.state].paddingTop};
-    padding-bottom: ${(props) => variant[props.state].paddingBottom};
+    padding-top: ${base(1 / 4)};
+    padding-bottom: ${base(1 / 4)};
     margin-bottom: ${base(1 / 2)};
 
     width: 100%;
@@ -82,7 +75,6 @@ const S = {
     background-color: ${(props) => variant[props.state].backgroundColor};
     border: ${(props) => variant[props.state].border};
     color: ${(props) => variant[props.state].color};
-    width: ${(props) => variant[props.state].width};
   `,
 };
 
@@ -104,10 +96,8 @@ const SideBar: FC = () => {
         </Box>
       </Flex>
       <Spacer size={2} />
-      <Flex
-        style={{ paddingLeft: theme.space[1] }}
-        direction="column"
-        alignItems="start"
+      <Box
+        style={{ paddingLeft: theme.space[1], paddingRight: theme.space[1] }}
       >
         <S.Section>Navigation</S.Section>
         {Global.navigation.map((item) => (
@@ -124,15 +114,55 @@ const SideBar: FC = () => {
                     ? theme.colors.foreground
                     : theme.colors.accent6
                 }
-                button
+                size={20}
               />
               {item.label}
             </S.Item>
           </Link>
         ))}
-        <Spacer size={1} />
-        <S.Section>Settings</S.Section>
-      </Flex>
+        <Spacer />
+        <S.Section>Resources</S.Section>
+        {Global.resources.map((item) => (
+          <Link
+            href={item.url}
+            style={{ textDecoration: "none" }}
+            key={item.label}
+          >
+            <S.Item state={router.route === item.url ? "active" : "inactive"}>
+              <Icon
+                icon={item.icon}
+                color={
+                  router.route === item.url
+                    ? theme.colors.foreground
+                    : theme.colors.accent6
+                }
+              />
+              {item.label}
+            </S.Item>
+          </Link>
+        ))}
+        <Spacer />
+        <S.Section>Social Media</S.Section>
+        {Global.socialMedia.map((item) => (
+          <Link
+            href={item.url}
+            style={{ textDecoration: "none" }}
+            key={item.label}
+          >
+            <S.Item state={router.route === item.url ? "active" : "inactive"}>
+              <Icon
+                icon={item.icon}
+                color={
+                  router.route === item.url
+                    ? theme.colors.foreground
+                    : theme.colors.accent6
+                }
+              />
+              {item.label}
+            </S.Item>
+          </Link>
+        ))}
+      </Box>
     </S.Container>
   );
 };

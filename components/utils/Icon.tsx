@@ -16,6 +16,7 @@ import {
   Copy,
 } from "react-feather";
 import { RoundButton } from "../graphics/RoundButton";
+import Link from "next/link";
 
 type Props = {
   icon: string;
@@ -23,6 +24,7 @@ type Props = {
   color?: string;
   strokeWidth?: number;
   button?: boolean;
+  href?: string;
 };
 
 const iconSelector: FC<Props> = (props) => {
@@ -64,10 +66,13 @@ const Icon: FC<Props> = ({
   color = theme.colors.foreground,
   strokeWidth = 2,
   button = false,
+  href,
 }) => {
   const props = { icon, size, color, strokeWidth, button };
   if (button) {
     return <button style={{ all: "unset" }}>{iconSelector(props)}</button>;
+  } else if (href) {
+    return <Link href={href}>{iconSelector(props)}</Link>;
   } else {
     return iconSelector(props);
   }

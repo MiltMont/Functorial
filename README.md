@@ -48,6 +48,10 @@
 - [ ] Enable Scrolling
 - [x] Add icons to items
 
+### SideBar
+
+- [ ] Refactor css
+
 ### Button
 
 - [ ] Full width and href properties dont work as intended when used simultaneously.

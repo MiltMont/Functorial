@@ -35,9 +35,8 @@ const LectureCard: FC<Props> = ({ title, slug, image, docType }) => {
               <Badge content={type} variant="warning" key={i} />
             ))}
           </Flex>
-          <Link href={`lectures/${slug}`}>
-            <Icon icon="round-button" button />
-          </Link>
+
+          <Icon icon="round-button" href={`lectures/${slug}`} />
         </Flex>
       </Box>
     </Style.Container>

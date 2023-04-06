@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { Component, FC } from "react";
 import Style from "./css";
 import Link from "next/link";
 import { MouseEventHandler } from "react";
@@ -22,8 +22,8 @@ const Button: FC<Props> = ({
 }) => {
   if (href) {
     return (
-      <Link href={href} style={{ textDecoration: "none" }}>
-        <Style fill={fill} variant={variant} width={width}>
+      <Link href={href} style={{ textDecoration: "none" }} legacyBehavior>
+        <Style fill={fill} variant={variant} width={width} as={"a"}>
           {children}
         </Style>
       </Link>

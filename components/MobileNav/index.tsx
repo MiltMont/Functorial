@@ -139,21 +139,6 @@ const MobileNav: FC = () => {
               </Link>
             ))}
             <Spacer />
-            <Style.Section>Social Media</Style.Section>
-            {Global.socialMedia.map((item) => (
-              <Link
-                href={item.url}
-                style={{ textDecoration: "none" }}
-                key={item.label}
-              >
-                <Style.Item state="inactive">
-                  <Icon icon={item.icon} color={theme.colors.accent6} button />
-
-                  {item.label}
-                </Style.Item>
-              </Link>
-            ))}
-            <Spacer />
             <Style.Section>Resources</Style.Section>
             {Global.resources.map((item) => (
               <Link
@@ -177,6 +162,21 @@ const MobileNav: FC = () => {
                     {item.label}
                   </Style.Item>
                 </AlertDialog.Action>
+              </Link>
+            ))}
+            <Spacer />
+            <Style.Section>Social Media</Style.Section>
+            {Global.socialMedia.map((item) => (
+              <Link
+                href={item.url}
+                style={{ textDecoration: "none" }}
+                key={item.label}
+              >
+                <Style.Item state="inactive">
+                  <Icon icon={item.icon} color={theme.colors.accent6} button />
+
+                  {item.label}
+                </Style.Item>
               </Link>
             ))}
           </Style.Container>

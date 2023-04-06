@@ -40,9 +40,8 @@ const ArticleCard: FC<Props> = ({ title, summary, date, slug, tag }) => {
             <Card.Date>{date}</Card.Date>
             <Badge content={tag} />
           </Flex>
-          <Link href={`articles/${slug}`}>
-            <Icon icon="round-button" button />
-          </Link>
+
+          <Icon icon="round-button" href={`articles/${slug}`} />
         </Flex>
       </Box>
     </Card.Container>

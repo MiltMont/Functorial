@@ -3,7 +3,7 @@ import GlobalStyle from "../styles/GlobalStyle";
 import theme from "../styles/Theme";
 import { ThemeProvider } from "styled-components";
 import { Inter } from "next/font/google";
-import MobileNav from "../components/MobileNav/MobileNav";
+import MobileNav from "../components/MobileNav";
 import * as Toast from "@radix-ui/react-toast";
 import SideBar from "../components/SideBard";
 import { base } from "../utils/base";

@@ -16,6 +16,7 @@ export const S = {
     column-gap: ${theme.space[1]};
     align-items: center;
   `,
+
   Viewport: styled(ToastComponent.Viewport)`
     display: flex;
     flex-direction: column;
