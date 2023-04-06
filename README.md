@@ -62,4 +62,5 @@
 
 ## Layout Components
 
-- [ ] Create layout component for padding
+- [x] Create layout component for padding
+- [ ] Create grid layout component

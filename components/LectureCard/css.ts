@@ -8,7 +8,6 @@ const Style = {
   `,
 
   Container: styled.div`
-    margin: ${theme.space[1]};
     border: 1px solid ${theme.colors.accent3};
     border-radius: ${theme.borderRadius[2]};
   `,
