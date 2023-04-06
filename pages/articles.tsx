@@ -1,9 +1,8 @@
-import Box from "../components/utils/Box";
-import theme from "../styles/Theme";
 import Spacer from "../components/utils/Spacer";
 import Text from "../components/utils/Text";
 import Layout from "../components/Layout";
 import Section from "../components/utils/Section";
+import SearchBar from "../components/SearchBar";
 
 export default function Articles() {
   return (
@@ -19,7 +18,10 @@ export default function Articles() {
           mathematics, programming, and other topics that I find interesting. I
           hope you enjoy reading them as much as I enjoyed writing them.
         </Text>
+        <Spacer />
+        <SearchBar />
       </Layout.Container>
+
       <Spacer size={2} />
     </Section>
   );

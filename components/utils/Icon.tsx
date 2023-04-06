@@ -14,6 +14,7 @@ import {
   Package,
   X,
   Copy,
+  Search,
 } from "react-feather";
 import { RoundButton } from "../graphics/RoundButton";
 import Link from "next/link";
@@ -57,6 +58,8 @@ const iconSelector: FC<Props> = (props) => {
       return <Copy {...props} />;
     case "round-button":
       return <RoundButton />;
+    case "search":
+      return <Search {...props} />;
   }
 };
 
