@@ -1,5 +1,4 @@
 import Flex from "../components/utils/Flex";
-import Box from "../components/utils/Box";
 import theme from "../styles/Theme";
 import ArticleCard from "../components/ArticleCard";
 import Button from "../components/Button";
@@ -12,6 +11,7 @@ import Toast from "../components/Toast";
 import Icon from "../components/utils/Icon";
 import Layout from "../components/Layout";
 import Section from "../components/utils/Section";
+import Grid from "../components/utils/Grid";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
             Write about mathematics in an easier manner.
           </Text>
           <Spacer size={1} />
-          <Text size={2} weight={1} color="accent7">
+          <Text size={2} weight={2} color="accent7">
             This blog template is designed to give you the necessary tools to
             write about technical matters without making it more difficult than
             in has to be.
