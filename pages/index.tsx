@@ -4,7 +4,6 @@ import theme from "../styles/Theme";
 import ArticleCard from "../components/ArticleCard";
 import Button from "../components/Button";
 import LectureCard from "../components/LectureCard";
-import Link from "next/link";
 import Spacer from "../components/utils/Spacer";
 import { Articles } from "../utils/dummyArticle";
 import { Lectures } from "../utils/dummyLecture";
@@ -12,19 +11,14 @@ import Text from "../components/utils/Text";
 import Toast from "../components/Toast";
 import Icon from "../components/utils/Icon";
 import Layout from "../components/Layout";
+import Section from "../components/utils/Section";
 
 export default function Home() {
   return (
     <>
-      <Box
-        style={{
-          backgroundColor: theme.colors.accent1,
-          paddingTop: theme.space[2],
-          paddingBottom: theme.space[2],
-          borderBottom: `1px solid ${theme.colors.accent3}`,
-        }}
-      >
+      <Section bB>
         <Layout.Container>
+          <Spacer size={2} />
           <Text as="h1" size={7} weight={4}>
             Write about mathematics in an easier manner.
           </Text>
@@ -50,7 +44,8 @@ export default function Home() {
             </Toast>
           </Flex>
         </Layout.Container>
-      </Box>
+        <Spacer size={2} />
+      </Section>
       <Spacer size={2} />
       <Layout.Container>
         <Text as="h1" size={7} weight={1}>

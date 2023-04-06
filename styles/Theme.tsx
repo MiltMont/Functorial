@@ -1,6 +1,38 @@
 import { DefaultTheme } from "styled-components";
 import { base } from "../utils/base";
 
+export type Color = {
+  background: string;
+  foreground: string;
+
+  accent1: string;
+  accent2: string;
+  accent3: string;
+  accent4: string;
+  accent5: string;
+  accent6: string;
+  accent7: string;
+  accent8: string;
+
+  error: string;
+  errorLight: string;
+  errorLighter: string;
+  errorDark: string;
+
+  success: string;
+  successLight: string;
+  successLighter: string;
+  successDark: string;
+
+  warning: string;
+  warningLight: string;
+  warningLighter: string;
+  warningDark: string;
+
+  highglight: string;
+  brand: string;
+};
+
 const theme: DefaultTheme = {
   colors: {
     background: "#000",
