@@ -5,8 +5,6 @@ import theme from "../../styles/Theme";
 import Flex from "../utils/Flex";
 import Badge from "../Badge/index";
 import { base } from "../../utils/base";
-import { RoundButton } from "../graphics/RoundButton";
-import Link from "next/link";
 import Icon from "../utils/Icon";
 
 type Props = {
@@ -35,7 +33,6 @@ const LectureCard: FC<Props> = ({ title, slug, image, docType }) => {
               <Badge content={type} variant="warning" key={i} />
             ))}
           </Flex>
-
           <Icon icon="round-button" href={`lectures/${slug}`} />
         </Flex>
       </Box>

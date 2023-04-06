@@ -68,7 +68,7 @@ const Icon: FC<Props> = ({
   button = false,
   href,
 }) => {
-  const props = { icon, size, color, strokeWidth, button };
+  const props = { icon, size, color, strokeWidth, href };
   if (button) {
     return <button style={{ all: "unset" }}>{iconSelector(props)}</button>;
   } else if (href) {

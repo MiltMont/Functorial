@@ -5,7 +5,6 @@ import { RoundButton } from "../graphics/RoundButton";
 import Flex from "../utils/Flex";
 import Badge from "../Badge";
 import { Card } from "./css";
-import Link from "next/link";
 import Icon from "../utils/Icon";
 
 type Props = {
