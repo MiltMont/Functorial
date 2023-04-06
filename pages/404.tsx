@@ -25,9 +25,11 @@ export default function Custom404() {
         This page does not exist
       </Text>
       <Spacer size={2} />
-      <Link href={"/"} style={{ textDecoration: "none" }}>
-        <Button>Go back home</Button>
-      </Link>
+
+      <Button href={"/"} width="auto">
+        Go back home
+      </Button>
+
       <Separator.Root
         style={{
           margin: `${theme.space[2]} 0 `,

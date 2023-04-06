@@ -67,16 +67,18 @@ export default function Home() {
           key={article.slug}
         />
       ))}
-      <Link href={"/articles"} style={{ textDecoration: "none" }}>
-        <Flex
-          style={{
-            marginLeft: theme.space[1],
-            marginRight: theme.space[1],
-          }}
-        >
-          <Button width="full">Read all articles</Button>
-        </Flex>
-      </Link>
+
+      <Flex
+        style={{
+          marginLeft: theme.space[1],
+          marginRight: theme.space[1],
+        }}
+      >
+        <Button width="full" href={"/articles"}>
+          Read all articles
+        </Button>
+      </Flex>
+
       <Spacer size={2} />
       <Box style={{ marginLeft: theme.space[1], marginRight: theme.space[1] }}>
         <Text as="h1" size={7} weight={1}>
@@ -92,18 +94,19 @@ export default function Home() {
         />
       ))}
 
-      <Link href={"/lectures"} style={{ textDecoration: "none" }}>
-        <Flex
-          justifyContent="center"
-          alignContent="stretch"
-          style={{
-            marginLeft: theme.space[1],
-            marginRight: theme.space[1],
-          }}
-        >
-          <Button width="full">Read all lectures</Button>
-        </Flex>
-      </Link>
+      <Flex
+        justifyContent="center"
+        alignContent="stretch"
+        style={{
+          marginLeft: theme.space[1],
+          marginRight: theme.space[1],
+        }}
+      >
+        <Button width="full" href={"/lectures"}>
+          Read all lectures
+        </Button>
+      </Flex>
+
       <Spacer size={4} />
     </>
   );

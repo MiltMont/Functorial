@@ -50,12 +50,16 @@
 
 ### SideBar
 
-- [ ] Refactor css
+- [x] Refactor css
 
 ### Button
 
-- [ ] Full width and href properties dont work as intended when used simultaneously.
+- [x] Full width and href properties dont work as intended when used simultaneously
 
 ## Errors
 
 - [x] Fix the unique props error. (Josh Post)
+
+## Layout Components
+
+- [ ] Create layout component for padding
