@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { LogoSM } from "../graphics/Logo";
 import Box from "../utils/Box";
 import theme from "../../styles/Theme";
@@ -14,7 +14,8 @@ import { base } from "../../utils/base";
 import styled from "styled-components";
 import Tooltip from "../Tooltip";
 
-const Container = styled.div`
+const Container = styled.button`
+  all: unset;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -31,6 +32,7 @@ const Container = styled.div`
 
 const SideBar: FC = () => {
   const router = useRouter();
+  const [closed, setClosed] = useState(false);
 
   return (
     <S.Container>
@@ -104,7 +106,7 @@ const SideBar: FC = () => {
         ))}
       </Box>
       <Tooltip content="Minimize Sidebar">
-        <Container>
+        <Container onClick={() => setClosed(!closed)}>
           <Icon icon="minimize" />
         </Container>
       </Tooltip>

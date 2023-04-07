@@ -10,7 +10,7 @@ export const Articles = [
   {
     title: "Not so nice spaces",
     summary:
-      "It is widely known that nice spaces usually arise in geometry and not so nice spaces in functional analysis. Here we explor why",
+      "It is widely known that nice spaces usually arise in geometry and not so nice spaces in functional analysis. Here we explore why",
     date: "February 13, 2023",
     slug: "funct-topos",
     tag: "Topology",
@@ -18,7 +18,7 @@ export const Articles = [
   {
     title: "A Hausdorff space which is not metrizable",
     summary:
-      "It is easy to prove that any metric space is a Housdorf space. Here we prove the opposite is no necessarily the case.",
+      "It is easy to prove that any metric space is a Hausdorff space. Here we prove the opposite is no necessarily the case.",
     date: "January 1, 2023",
     slug: "hausdorff-not-metrizable",
     tag: "Topology",

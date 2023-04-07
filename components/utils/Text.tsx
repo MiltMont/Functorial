@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import theme from "../../styles/Theme";
 import { FC } from "react";
+import { Color } from "../../styles/Theme";
 
 type Props = {
   children: React.ReactNode;
@@ -26,14 +27,7 @@ type Props = {
   weight?: 1 | 2 | 3 | 4;
   transform?: "capitalize" | "uppercase" | "lowercase" | "initial";
   align?: "left" | "center" | "right";
-  color?:
-    | "foreground"
-    | "background"
-    | "brand"
-    | "error"
-    | "success"
-    | "warning"
-    | string;
+  color?: Color;
   truncate?: number | boolean;
   title?: string; //If text is `truncated`, this should be the full text.
   wrap?: boolean;
@@ -42,6 +36,7 @@ type Props = {
   id?: string; //The root element id
 };
 
+/*
 const Typography = styled.span`
   padding: 0;
   text-rendering: optimizeLegibility;
@@ -60,6 +55,27 @@ const Typography = styled.span`
   `
       : ""};
   text-wrap: ${(props: Props) => (props.wrap ? "normal" : "nowrap")};
+`;
+*/
+
+const Typography = styled.span<Props>`
+  padding: 0;
+  text-rendering: optimizeLegibility;
+
+  font-size: ${(p) => p.theme.fontSize[p.size]};
+  font-weight: ${(p) => p.theme.fontWeight[p.weight]};
+  text-transform: ${(p) => p.transform || ""};
+  text-align: ${(p) => p.align};
+  color: ${(p) => p.theme.colors[p.color || "foreground"]};
+  ${(p) =>
+    p.truncate
+      ? `
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  `
+      : ""};
+  text-wrap: ${(p: Props) => (p.wrap ? "normal" : "nowrap")};
 `;
 
 // Add mono font
@@ -84,7 +100,7 @@ const Text: FC<Props> = ({
     weight={weight}
     transform={transform}
     align={align}
-    color={theme.colors[color] || color}
+    color={color}
     truncate={truncate}
     title={title}
     wrap={wrap}
