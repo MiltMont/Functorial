@@ -41,7 +41,7 @@
 - [x] Badge (Add variants)
 - [x] Button (Add outline and color variants)
 
-- [ ] Mobile Menu
+- [x] Mobile Menu
 
 ### Mobile Menu
 
@@ -51,7 +51,7 @@
 ### SideBar
 
 - [x] Refactor css
-- [ ] Only show tooltip when sidebar is closed
+- [x] Only show tooltip when sidebar is closed
 
 ### Button
 

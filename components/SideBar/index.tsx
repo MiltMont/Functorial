@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { LogoSM } from "../graphics/Logo";
 import Box from "../utils/Box";
 import theme from "../../styles/Theme";
@@ -18,6 +18,56 @@ const handleDisplay = (closed: boolean) => {
     return "closed";
   } else {
     return "open";
+  }
+};
+
+type Item = {
+  label: string;
+  url: string;
+  icon: string;
+};
+
+const Item = (state: boolean, item: Item, route: string) => {
+  if (state) {
+    return (
+      <Tooltip content={item.label}>
+        <S.Item
+          state={route === item.url ? "active" : "inactive"}
+          display={handleDisplay(state)}
+        >
+          <Icon
+            icon={item.icon}
+            color={route === item.url ? "foreground" : "accent6"}
+            size={20}
+          />
+          <S.ItemLabel
+            state={route === item.url ? "active" : "inactive"}
+            display={handleDisplay(state)}
+          >
+            {item.label}
+          </S.ItemLabel>
+        </S.Item>
+      </Tooltip>
+    );
+  } else {
+    return (
+      <S.Item
+        state={route === item.url ? "active" : "inactive"}
+        display={handleDisplay(state)}
+      >
+        <Icon
+          icon={item.icon}
+          color={route === item.url ? "foreground" : "accent6"}
+          size={20}
+        />
+        <S.ItemLabel
+          state={route === item.url ? "active" : "inactive"}
+          display={handleDisplay(state)}
+        >
+          {item.label}
+        </S.ItemLabel>
+      </S.Item>
+    );
   }
 };
 
@@ -59,24 +109,7 @@ const SideBar: FC = () => {
               style={{ textDecoration: "none" }}
               key={item.label}
             >
-              <Tooltip content={item.label}>
-                <S.Item
-                  state={router.route === item.url ? "active" : "inactive"}
-                  display={handleDisplay(closed)}
-                >
-                  <Icon
-                    icon={item.icon}
-                    color={router.route === item.url ? "foreground" : "accent6"}
-                    size={20}
-                  />
-                  <S.ItemLabel
-                    state={router.route === item.url ? "active" : "inactive"}
-                    display={handleDisplay(closed)}
-                  >
-                    {item.label}
-                  </S.ItemLabel>
-                </S.Item>
-              </Tooltip>
+              {Item(closed, item, router.route)}
             </Link>
           ))}
           <Spacer />
@@ -87,23 +120,7 @@ const SideBar: FC = () => {
               style={{ textDecoration: "none" }}
               key={item.label}
             >
-              <Tooltip content={item.label}>
-                <S.Item
-                  state={router.route === item.url ? "active" : "inactive"}
-                  display={handleDisplay(closed)}
-                >
-                  <Icon
-                    icon={item.icon}
-                    color={router.route === item.url ? "foreground" : "accent6"}
-                  />
-                  <S.ItemLabel
-                    state={router.route === item.url ? "active" : "inactive"}
-                    display={handleDisplay(closed)}
-                  >
-                    {item.label}
-                  </S.ItemLabel>
-                </S.Item>
-              </Tooltip>
+              {Item(closed, item, router.route)}
             </Link>
           ))}
           <Spacer />
@@ -115,18 +132,7 @@ const SideBar: FC = () => {
               style={{ textDecoration: "none" }}
               key={item.label}
             >
-              <Tooltip content={item.label}>
-                <S.Item state={"inactive"} display={handleDisplay(closed)}>
-                  <Icon icon={item.icon} color={"accent6"} />
-
-                  <S.ItemLabel
-                    state={router.route === item.url ? "active" : "inactive"}
-                    display={handleDisplay(closed)}
-                  >
-                    {item.label}
-                  </S.ItemLabel>
-                </S.Item>
-              </Tooltip>
+              {Item(closed, item, router.route)}
             </Link>
           ))}
         </Box>
