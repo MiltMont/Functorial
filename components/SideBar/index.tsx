@@ -12,6 +12,7 @@ import { S } from "./css";
 import Tooltip from "../Tooltip";
 import { useNavState } from "../../hooks/useNavState";
 import Flex from "../utils/Flex";
+import * as Separator from "@radix-ui/react-separator";
 
 const handleDisplay = (closed: boolean) => {
   if (closed) {
@@ -71,6 +72,28 @@ const Item = (state: boolean, item: Item, route: string) => {
   }
 };
 
+const Divisor = (state: boolean, label: string) => {
+  if (state) {
+    return (
+      <Separator.Root
+        style={{
+          margin: `${theme.space[2]} 0 `,
+          width: "100%",
+          backgroundColor: theme.colors.accent3,
+          height: "1px",
+        }}
+      />
+    );
+  } else {
+    return (
+      <>
+        <Spacer />
+        <S.Section display={handleDisplay(state)}>{label}</S.Section>
+      </>
+    );
+  }
+};
+
 const SideBar: FC = () => {
   const router = useRouter();
 
@@ -112,8 +135,8 @@ const SideBar: FC = () => {
               {Item(closed, item, router.route)}
             </Link>
           ))}
-          <Spacer />
-          <S.Section display={handleDisplay(closed)}>Resources</S.Section>
+          {Divisor(closed, "Projects")}
+
           {Global.resources.map((item) => (
             <Link
               href={item.url}
@@ -123,9 +146,7 @@ const SideBar: FC = () => {
               {Item(closed, item, router.route)}
             </Link>
           ))}
-          <Spacer />
-
-          <S.Section display={handleDisplay(closed)}>Social Media</S.Section>
+          {Divisor(closed, "Social Media")}
           {Global.socialMedia.map((item) => (
             <Link
               href={item.url}
