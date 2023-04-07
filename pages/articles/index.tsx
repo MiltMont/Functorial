@@ -6,6 +6,8 @@ import SearchBar from "components/SearchBar";
 import { allArticles, type Article } from "contentlayer/generated";
 import { type GetStaticProps, type InferGetStaticPropsType } from "next";
 import ArticleCard from "components/ArticleCard";
+import Flex from "components/utils/Flex";
+import theme from "styles/Theme";
 
 export const getStaticProps: GetStaticProps<{
   articles: Article[];
@@ -38,9 +40,11 @@ export default function Articles({
       </Section>
       <Spacer size={2} />
       <Layout.Container>
-        {articles.map((article) => (
-          <ArticleCard key={article.slug} article={article} />
-        ))}
+        <Flex gap={theme.space[1]} direction="column" alignItems="stretch">
+          {articles.map((article) => (
+            <ArticleCard article={article} key={article.slug} />
+          ))}
+        </Flex>
       </Layout.Container>
       <Spacer size={2} />
     </>

@@ -4,6 +4,8 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import Layout from "components/Layout";
 import Spacer from "components/utils/Spacer";
 import Text from "components/utils/Text";
+import Box from "components/utils/Box";
+import theme from "styles/Theme";
 
 export const getStaticPaths = () => {
   return {
@@ -33,11 +35,21 @@ export default function Article({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const MDXContent = useMDXComponent(article.body.code);
   return (
-    <Layout.Container>
+    <Layout.Container article>
       <Spacer size={2} />
+      <Box
+        style={{
+          height: "400px",
+          border: `1px solid ${theme.colors.accent3}`,
+          borderRadius: theme.borderRadius[2],
+          marginBottom: theme.space[1],
+          backgroundColor: theme.colors.accent3,
+        }}
+      />
       <Text size={7} as="h1" weight={4}>
         {article.title}
       </Text>
+      <Spacer size={2} />
       <MDXContent />
     </Layout.Container>
   );

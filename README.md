@@ -70,3 +70,5 @@
 
 - [ ] Style markdown
 - [ ] Implement Latex
+- [ ] Sort by date
+- [ ] Implement article search
