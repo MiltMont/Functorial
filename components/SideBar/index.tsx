@@ -12,6 +12,7 @@ import Icon from "../utils/Icon";
 import { S } from "./css";
 import { base } from "../../utils/base";
 import styled from "styled-components";
+import Tooltip from "../Tooltip";
 
 const Container = styled.div`
   position: absolute;
@@ -102,10 +103,11 @@ const SideBar: FC = () => {
           </Link>
         ))}
       </Box>
-
-      <Container>
-        <Icon icon="minimize" />
-      </Container>
+      <Tooltip content="Minimize Sidebar">
+        <Container>
+          <Icon icon="minimize" />
+        </Container>
+      </Tooltip>
     </S.Container>
   );
 };

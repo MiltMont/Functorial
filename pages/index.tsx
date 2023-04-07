@@ -11,7 +11,6 @@ import Toast from "../components/Toast";
 import Icon from "../components/utils/Icon";
 import Layout from "../components/Layout";
 import Section from "../components/utils/Section";
-import Grid from "../components/utils/Grid";
 
 export default function Home() {
   return (
@@ -86,6 +85,7 @@ export default function Home() {
           ))}
         </Flex>
         <Spacer />
+
         <Button width="full" href={"/lectures"}>
           Read all lectures
         </Button>

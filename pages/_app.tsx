@@ -5,9 +5,10 @@ import { ThemeProvider } from "styled-components";
 import { Inter } from "next/font/google";
 import MobileNav from "../components/MobileNav";
 import * as Toast from "@radix-ui/react-toast";
-import SideBar from "../components/SideBard";
+import SideBar from "../components/SideBar";
 import { base } from "../utils/base";
 import styled from "styled-components";
+import * as Tooltip from "@radix-ui/react-tooltip";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,18 +23,20 @@ const AppContainer = styled.div`
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Toast.Provider>
-      <main className={inter.className}>
-        <MobileNav />
+    <main className={inter.className}>
+      <Toast.Provider>
+        <Tooltip.Provider>
+          <MobileNav />
 
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          <SideBar />
-          <AppContainer>
-            <Component {...pageProps} />
-          </AppContainer>
-        </ThemeProvider>
-      </main>
-    </Toast.Provider>
+          <ThemeProvider theme={theme}>
+            <GlobalStyle />
+            <SideBar />
+            <AppContainer>
+              <Component {...pageProps} />
+            </AppContainer>
+          </ThemeProvider>
+        </Tooltip.Provider>
+      </Toast.Provider>
+    </main>
   );
 }
