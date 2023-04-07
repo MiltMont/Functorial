@@ -64,7 +64,7 @@ export default function Home({
         <Spacer />
         <Flex gap={theme.space[1]} direction="column" alignItems="stretch">
           {articles.map((article) => (
-            <ArticleCard article={article} />
+            <ArticleCard article={article} key={article.slug} />
           ))}
         </Flex>
         <Spacer />

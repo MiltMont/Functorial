@@ -39,9 +39,10 @@ export default function Articles({
       <Spacer size={2} />
       <Layout.Container>
         {articles.map((article) => (
-          <ArticleCard article={article} />
+          <ArticleCard key={article.slug} article={article} />
         ))}
       </Layout.Container>
+      <Spacer size={2} />
     </>
   );
 }
