@@ -12,6 +12,7 @@ const S = {
       ${(p) => p.theme.borderRadius[2]} 0;
     background-color: ${(p) => p.theme.colors.background};
     color: ${(p) => p.theme.colors.accent7};
+    font-size: ${(p) => p.theme.fontSize[1]};
 
     &:focus {
       outline: none;

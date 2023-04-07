@@ -15,14 +15,16 @@ import {
   X,
   Copy,
   Search,
+  Minimize,
 } from "react-feather";
 import { RoundButton } from "../graphics/RoundButton";
 import Link from "next/link";
+import { Color } from "../../styles/Theme";
 
 type Props = {
   icon: string;
   size?: number;
-  color?: string;
+  color?: Color;
   strokeWidth?: number;
   button?: boolean;
   href?: string;
@@ -60,6 +62,8 @@ const iconSelector: FC<Props> = (props) => {
       return <RoundButton />;
     case "search":
       return <Search {...props} />;
+    case "minimize":
+      return <Minimize {...props} />;
   }
 };
 
@@ -71,7 +75,7 @@ const Icon: FC<Props> = ({
   button = false,
   href,
 }) => {
-  const props = { icon, size, color, strokeWidth, href };
+  const props = { icon, size, color: theme.colors[color], strokeWidth, href };
   if (button) {
     return <button style={{ all: "unset" }}>{iconSelector(props)}</button>;
   } else if (href) {

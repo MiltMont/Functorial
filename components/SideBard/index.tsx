@@ -10,6 +10,23 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Icon from "../utils/Icon";
 import { S } from "./css";
+import { base } from "../../utils/base";
+import styled from "styled-components";
+
+const Container = styled.div`
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: ${(p) => p.theme.space[1]};
+  padding: ${base(1 / 2)};
+  border: 1px solid ${(p) => p.theme.colors.accent3};
+  border-radius: ${(p) => p.theme.borderRadius[2]};
+  background-color: ${(p) => p.theme.colors.background};
+
+  &:hover {
+    background-color: ${(p) => p.theme.colors.accent2};
+  }
+`;
 
 const SideBar: FC = () => {
   const router = useRouter();
@@ -43,11 +60,7 @@ const SideBar: FC = () => {
             <S.Item state={router.route === item.url ? "active" : "inactive"}>
               <Icon
                 icon={item.icon}
-                color={
-                  router.route === item.url
-                    ? theme.colors.foreground
-                    : theme.colors.accent6
-                }
+                color={router.route === item.url ? "foreground" : "accent6"}
                 size={20}
               />
               {item.label}
@@ -65,11 +78,7 @@ const SideBar: FC = () => {
             <S.Item state={router.route === item.url ? "active" : "inactive"}>
               <Icon
                 icon={item.icon}
-                color={
-                  router.route === item.url
-                    ? theme.colors.foreground
-                    : theme.colors.accent6
-                }
+                color={router.route === item.url ? "foreground" : "accent6"}
               />
               {item.label}
             </S.Item>
@@ -86,17 +95,17 @@ const SideBar: FC = () => {
             <S.Item state={router.route === item.url ? "active" : "inactive"}>
               <Icon
                 icon={item.icon}
-                color={
-                  router.route === item.url
-                    ? theme.colors.foreground
-                    : theme.colors.accent6
-                }
+                color={router.route === item.url ? "foreground" : "accent6"}
               />
               {item.label}
             </S.Item>
           </Link>
         ))}
       </Box>
+
+      <Container>
+        <Icon icon="minimize" />
+      </Container>
     </S.Container>
   );
 };

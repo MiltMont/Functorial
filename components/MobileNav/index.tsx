@@ -127,9 +127,7 @@ const MobileNav: FC = () => {
                     <Icon
                       icon={item.icon}
                       color={
-                        router.route === item.url
-                          ? theme.colors.foreground
-                          : theme.colors.accent6
+                        router.route === item.url ? "foreground" : "accent6"
                       }
                       button
                     />
@@ -153,9 +151,7 @@ const MobileNav: FC = () => {
                     <Icon
                       icon={item.icon}
                       color={
-                        router.route === item.url
-                          ? theme.colors.foreground
-                          : theme.colors.accent6
+                        router.route === item.url ? "foreground" : "accent6"
                       }
                       button
                     />
@@ -173,7 +169,7 @@ const MobileNav: FC = () => {
                 key={item.label}
               >
                 <Style.Item state="inactive">
-                  <Icon icon={item.icon} color={theme.colors.accent6} button />
+                  <Icon icon={item.icon} color={"accent6"} button />
 
                   {item.label}
                 </Style.Item>

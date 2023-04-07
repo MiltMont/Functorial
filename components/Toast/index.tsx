@@ -54,7 +54,7 @@ const Toast: FC<Props> = ({
                 borderRadius: theme.borderRadius[1],
               }}
             >
-              <Icon icon="close" color={theme.colors.accent6} size={20} />
+              <Icon icon="close" color={"accent6"} size={20} />
             </button>
           </S.Action>
         )}
