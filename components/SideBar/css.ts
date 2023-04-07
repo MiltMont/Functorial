@@ -57,6 +57,8 @@ export const S = {
       align-content: center;
         `
           : " "}
+
+      justify-content: space-between;
     }
   `,
 
@@ -74,8 +76,11 @@ export const S = {
     align-items: center;
 
     border-radius: ${(props) => props.theme.borderRadius[1]};
-    padding-left: ${(props) => props.theme.space[1]};
-    padding-right: ${(props) => props.theme.space[1]};
+
+    padding-left: ${(props) =>
+      props.display === "closed" ? base(1 / 2) : props.theme.space[1]};
+    padding-right: ${(props) =>
+      props.display === "closed" ? base(1 / 2) : props.theme.space[1]};
     padding-top: ${(props) =>
       props.display === "closed" ? base(1 / 2) : base(1 / 4)};
     padding-bottom: ${(props) =>
@@ -92,7 +97,7 @@ export const S = {
     font-size: ${(props) => props.theme.fontSize[3]};
     font-weight: ${(props) => props.theme.fontWeight[1]};
     color: ${(props) => variant[props.state].color};
-
+    width: 100%;
     display: ${(p) => variant[p.display].itemLabel}};
 
   `,
@@ -118,14 +123,15 @@ export const S = {
 
   Minimize: styled.button<Props>`
     all: unset;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+
     margin: ${(p) => p.theme.space[1]};
     padding: ${base(1 / 2)};
+
     border: 1px solid ${(p) => p.theme.colors.accent3};
     border-radius: ${(p) => p.theme.borderRadius[2]};
     background-color: ${(p) => p.theme.colors.background};
+
+    width: fit-content;
 
     &:hover {
       background-color: ${(p) => p.theme.colors.accent2};

@@ -51,6 +51,7 @@
 ### SideBar
 
 - [x] Refactor css
+- [ ] Only show tooltip when sidebar is closed
 
 ### Button
 
