@@ -135,7 +135,8 @@ const SideBar: FC = () => {
               {Item(closed, item, router.route)}
             </Link>
           ))}
-          {Divisor(closed, "Projects")}
+
+          {Divisor(closed, "Resources")}
 
           {Global.resources.map((item) => (
             <Link
@@ -159,14 +160,25 @@ const SideBar: FC = () => {
         </Box>
       </Flex>
       <Flex justifyContent="end">
-        <Tooltip content="Minimize Sidebar">
-          <S.Minimize
-            onClick={() => setClosed(closed)}
-            display={handleDisplay(closed)}
-          >
-            <Icon icon="minimize" />
-          </S.Minimize>
-        </Tooltip>
+        {closed ? (
+          <Tooltip content="Maximize Sidebar">
+            <S.Minimize
+              onClick={() => setClosed(closed)}
+              display={handleDisplay(closed)}
+            >
+              <Icon icon="maximize" />
+            </S.Minimize>
+          </Tooltip>
+        ) : (
+          <Tooltip content="Minimize Sidebar">
+            <S.Minimize
+              onClick={() => setClosed(closed)}
+              display={handleDisplay(closed)}
+            >
+              <Icon icon="minimize" />
+            </S.Minimize>
+          </Tooltip>
+        )}
       </Flex>
     </S.Container>
   );
