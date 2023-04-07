@@ -12,7 +12,18 @@ import Icon from "../components/utils/Icon";
 import Layout from "../components/Layout";
 import Section from "../components/utils/Section";
 
-export default function Home() {
+import { allArticles, type Article } from "contentlayer/generated";
+import { type GetStaticProps, type InferGetStaticPropsType } from "next";
+
+export const getStaticProps: GetStaticProps<{
+  articles: Article[];
+}> = () => {
+  return { props: { articles: allArticles } };
+};
+
+export default function Home({
+  articles,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Section bB>
@@ -52,15 +63,8 @@ export default function Home() {
         </Text>
         <Spacer />
         <Flex gap={theme.space[1]} direction="column" alignItems="stretch">
-          {Articles.map((article) => (
-            <ArticleCard
-              title={article.title}
-              summary={article.summary}
-              date={article.date}
-              slug={article.slug}
-              tag={article.tag}
-              key={article.slug}
-            />
+          {articles.map((article) => (
+            <ArticleCard article={article} />
           ))}
         </Flex>
         <Spacer />

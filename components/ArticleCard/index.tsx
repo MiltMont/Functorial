@@ -1,22 +1,17 @@
 import { FC } from "react";
 import theme from "../../styles/Theme";
 import Box from "../utils/Box";
-import { RoundButton } from "../graphics/RoundButton";
 import Flex from "../utils/Flex";
 import Badge from "../Badge";
 import { Card } from "./css";
 import Icon from "../utils/Icon";
+import { type Article } from "contentlayer/generated";
 
 type Props = {
-  title: string;
-  summary: string;
-  date: string;
-  image?: string;
-  slug: string;
-  tag: string;
+  article: Article;
 };
 
-const ArticleCard: FC<Props> = ({ title, summary, date, slug, tag }) => {
+const ArticleCard: FC<Props> = ({ article }) => {
   return (
     <Card.Container>
       <Card.Image />
@@ -28,19 +23,19 @@ const ArticleCard: FC<Props> = ({ title, summary, date, slug, tag }) => {
           borderTop: `1px solid ${theme.colors.accent3}`,
         }}
       >
-        <Card.Title>{title}</Card.Title>
-        <Card.Summary>{summary}</Card.Summary>
+        <Card.Title>{article.title}</Card.Title>
+        <Card.Summary>{article.summary}</Card.Summary>
         <Flex
           justifyContent="space-between"
           alignItems="end"
           style={{ marginTop: theme.space[1] }}
         >
           <Flex direction="column" alignItems="start">
-            <Card.Date>{date}</Card.Date>
-            <Badge content={tag} />
+            <Card.Date>{article.date}</Card.Date>
+            <Badge content={article.tag} />
           </Flex>
 
-          <Icon icon="round-button" href={`articles/${slug}`} />
+          <Icon icon="round-button" href={`articles/${article.slug}`} />
         </Flex>
       </Box>
     </Card.Container>

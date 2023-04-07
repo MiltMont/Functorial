@@ -39,14 +39,7 @@ export default function Articles({
       <Spacer size={2} />
       <Layout.Container>
         {articles.map((article) => (
-          <ArticleCard
-            key={article.slug}
-            summary={article.summary}
-            tag={article.tag}
-            date={article.date}
-            title={article.title}
-            slug={article.slug}
-          />
+          <ArticleCard article={article} />
         ))}
       </Layout.Container>
     </>

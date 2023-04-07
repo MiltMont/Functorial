@@ -65,3 +65,8 @@
 
 - [x] Create layout component for padding
 - [ ] Create grid layout component
+
+# Content Layer
+
+- [ ] Style markdown
+- [ ] Implement Latex
