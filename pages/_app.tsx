@@ -9,19 +9,26 @@ import SideBar from "../components/SideBar";
 import { base } from "../utils/base";
 import styled from "styled-components";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import { useNavState } from "../hooks/useNavState";
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
 });
 
-const AppContainer = styled.div`
+type AppContainerProps = {
+  sideBarClosed?: boolean;
+};
+
+const AppContainer = styled.div<AppContainerProps>`
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    margin-left: ${base(14)};
+    margin-left: ${(props) => (props.sideBarClosed ? base(5) : base(14))};
   }
 `;
 
 export default function App({ Component, pageProps }: AppProps) {
+  const closed = useNavState((state) => state.closed);
+
   return (
     <main className={inter.className}>
       <Toast.Provider>
@@ -31,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <ThemeProvider theme={theme}>
             <GlobalStyle />
             <SideBar />
-            <AppContainer>
+            <AppContainer sideBarClosed={closed}>
               <Component {...pageProps} />
             </AppContainer>
           </ThemeProvider>

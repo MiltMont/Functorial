@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import { LogoSM } from "../graphics/Logo";
 import Box from "../utils/Box";
 import theme from "../../styles/Theme";
-import Flex from "../utils/Flex";
 import Text from "../utils/Text";
 import Spacer from "../utils/Spacer";
 import { Global } from "../../utils/globals";
@@ -10,25 +9,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Icon from "../utils/Icon";
 import { S } from "./css";
-import { base } from "../../utils/base";
-import styled from "styled-components";
 import Tooltip from "../Tooltip";
-
-const Container = styled.button`
-  all: unset;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: ${(p) => p.theme.space[1]};
-  padding: ${base(1 / 2)};
-  border: 1px solid ${(p) => p.theme.colors.accent3};
-  border-radius: ${(p) => p.theme.borderRadius[2]};
-  background-color: ${(p) => p.theme.colors.background};
-
-  &:hover {
-    background-color: ${(p) => p.theme.colors.accent2};
-  }
-`;
+import { useNavState } from "../../hooks/useNavState";
 
 const handleDisplay = (closed: boolean) => {
   if (closed) {
@@ -40,9 +22,9 @@ const handleDisplay = (closed: boolean) => {
 
 const SideBar: FC = () => {
   const router = useRouter();
-  const [closed, setClosed] = useState(false);
-  console.log(closed);
-  console.log(handleDisplay(closed));
+
+  const closed = useNavState((state) => state.closed);
+  const setClosed = useNavState((state) => state.setClosed);
 
   return (
     <S.Container display={handleDisplay(closed)}>
@@ -140,7 +122,7 @@ const SideBar: FC = () => {
       </Box>
       <Tooltip content="Minimize Sidebar">
         <S.Minimize
-          onClick={() => setClosed(!closed)}
+          onClick={() => setClosed(closed)}
           display={handleDisplay(closed)}
         >
           <Icon icon="minimize" />
