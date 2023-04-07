@@ -30,85 +30,121 @@ const Container = styled.button`
   }
 `;
 
+const handleDisplay = (closed: boolean) => {
+  if (closed) {
+    return "closed";
+  } else {
+    return "open";
+  }
+};
+
 const SideBar: FC = () => {
   const router = useRouter();
   const [closed, setClosed] = useState(false);
+  console.log(closed);
+  console.log(handleDisplay(closed));
 
   return (
-    <S.Container>
-      <Flex
-        style={{ paddingLeft: theme.space[1], paddingTop: theme.space[2] }}
-        gap={theme.space[1]}
-        alignItems="start"
-      >
+    <S.Container display={handleDisplay(closed)}>
+      <S.Presentation.Container display={handleDisplay(closed)}>
         <Box>
           <LogoSM />
         </Box>
-        <Box>
+        <S.Presentation.Items display={handleDisplay(closed)}>
           <Text size={2}>Milton Montiel</Text>
-          <Text color={theme.colors.accent6}>Math Enjoyer</Text>
-        </Box>
-      </Flex>
+          <Text color={"accent6"}>Math Enjoyer</Text>
+        </S.Presentation.Items>
+      </S.Presentation.Container>
+
       <Spacer size={2} />
       <Box
         style={{ paddingLeft: theme.space[1], paddingRight: theme.space[1] }}
       >
-        <S.Section>Navigation</S.Section>
+        <S.Section display={handleDisplay(closed)}>Navigation</S.Section>
         {Global.navigation.map((item) => (
           <Link
             href={item.url}
             style={{ textDecoration: "none" }}
             key={item.label}
           >
-            <S.Item state={router.route === item.url ? "active" : "inactive"}>
-              <Icon
-                icon={item.icon}
-                color={router.route === item.url ? "foreground" : "accent6"}
-                size={20}
-              />
-              {item.label}
-            </S.Item>
+            <Tooltip content={item.label}>
+              <S.Item
+                state={router.route === item.url ? "active" : "inactive"}
+                display={handleDisplay(closed)}
+              >
+                <Icon
+                  icon={item.icon}
+                  color={router.route === item.url ? "foreground" : "accent6"}
+                  size={20}
+                />
+                <S.ItemLabel
+                  state={router.route === item.url ? "active" : "inactive"}
+                  display={handleDisplay(closed)}
+                >
+                  {item.label}
+                </S.ItemLabel>
+              </S.Item>
+            </Tooltip>
           </Link>
         ))}
         <Spacer />
-        <S.Section>Resources</S.Section>
+        <S.Section display={handleDisplay(closed)}>Resources</S.Section>
         {Global.resources.map((item) => (
           <Link
             href={item.url}
             style={{ textDecoration: "none" }}
             key={item.label}
           >
-            <S.Item state={router.route === item.url ? "active" : "inactive"}>
-              <Icon
-                icon={item.icon}
-                color={router.route === item.url ? "foreground" : "accent6"}
-              />
-              {item.label}
-            </S.Item>
+            <Tooltip content={item.label}>
+              <S.Item
+                state={router.route === item.url ? "active" : "inactive"}
+                display={handleDisplay(closed)}
+              >
+                <Icon
+                  icon={item.icon}
+                  color={router.route === item.url ? "foreground" : "accent6"}
+                />
+                <S.ItemLabel
+                  state={router.route === item.url ? "active" : "inactive"}
+                  display={handleDisplay(closed)}
+                >
+                  {item.label}
+                </S.ItemLabel>
+              </S.Item>
+            </Tooltip>
           </Link>
         ))}
         <Spacer />
-        <S.Section>Social Media</S.Section>
+
+        <S.Section display={handleDisplay(closed)}>Social Media</S.Section>
         {Global.socialMedia.map((item) => (
           <Link
             href={item.url}
             style={{ textDecoration: "none" }}
             key={item.label}
           >
-            <S.Item state={router.route === item.url ? "active" : "inactive"}>
-              <Icon
-                icon={item.icon}
-                color={router.route === item.url ? "foreground" : "accent6"}
-              />
-              {item.label}
-            </S.Item>
+            <Tooltip content={item.label}>
+              <S.Item state={"inactive"} display={handleDisplay(closed)}>
+                <Icon icon={item.icon} color={"accent6"} />
+
+                <S.ItemLabel
+                  state={router.route === item.url ? "active" : "inactive"}
+                  display={handleDisplay(closed)}
+                >
+                  {item.label}
+                </S.ItemLabel>
+              </S.Item>
+            </Tooltip>
           </Link>
         ))}
       </Box>
       <Tooltip content="Minimize Sidebar">
-        <Container onClick={() => setClosed(!closed)}>
+        <S.Minimize
+          onClick={() => setClosed(!closed)}
+          display={handleDisplay(closed)}
+        >
           <Icon icon="minimize" />
-        </Container>
+        </S.Minimize>
       </Tooltip>
     </S.Container>
   );
