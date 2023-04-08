@@ -2,13 +2,25 @@ import styled from "styled-components";
 import { base } from "../../utils/base";
 import { Props } from ".";
 
+const handlePadding = (p: Props) => {
+  if (p.navBarState && p.article) {
+    return base(18);
+  } else if (p.navBarState) {
+    return base(16);
+  } else if (p.article) {
+    return base(14);
+  } else {
+    return base(12);
+  }
+};
+
 export const S = {
   Root: styled.div<Props>`
     @media (max-width: ${(p) => p.theme.breakpoints.md}) {
       padding: 0 ${(p) => p.theme.space[1]};
     }
     @media (min-width: ${(p) => p.theme.breakpoints.md}) {
-      padding: 0 ${(p) => (p.navBarState ? base(16) : p.theme.space[12])};
+      padding: 0 ${(p) => handlePadding(p)};
     }
 
     ${(p) =>
