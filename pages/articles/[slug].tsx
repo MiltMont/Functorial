@@ -49,8 +49,8 @@ export default function Article({
       <Text size={7} as="h1" weight={4}>
         {article.title}
       </Text>
-      <Spacer size={2} />
       <MDXContent />
+      <Spacer size={2} />
     </Layout.Container>
   );
 }
