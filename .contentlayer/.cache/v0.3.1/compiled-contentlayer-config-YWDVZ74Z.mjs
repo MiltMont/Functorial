@@ -1,7 +1,7 @@
+// contentlayer.config.js
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import rehypeSlug from "rehype-slug";
-
-export const Article = defineDocumentType(() => ({
+var Article = defineDocumentType(() => ({
   name: "Article",
   contentType: "mdx",
   // Location of Post source files (relative to `contentDirPath`)
@@ -12,36 +12,38 @@ export const Article = defineDocumentType(() => ({
   fields: {
     title: {
       type: "string",
-      required: true,
+      required: true
     },
     date: {
-      type: "string", //Change to date
-      required: true,
+      type: "string",
+      //Change to date
+      required: true
     },
     summary: {
       type: "string",
-      required: true,
+      required: true
     },
     tag: {
       type: "string",
-      required: true,
-    },
+      required: true
+    }
   },
-
   computedFields: {
     slug: {
       type: "string",
-      resolve: (post) =>
-        post._raw.sourceFileName
-          // hello-world.mdx => hello-world
-          .replace(/\.mdx$/, ""),
-    },
-  },
+      resolve: (post) => post._raw.sourceFileName.replace(/\.mdx$/, "")
+    }
+  }
 }));
-
-export default makeSource({
+var contentlayer_config_default = makeSource({
   // Location of source files for all defined documentTypes
   contentDirPath: "content",
   documentTypes: [Article],
-  mdx: { rehypePlugins: [rehypeSlug] },
+  markdown: { rehypePlugins: [rehypeSlug] },
+  mdk: { rehypePlugins: [rehypeSlug] }
 });
+export {
+  Article,
+  contentlayer_config_default as default
+};
+//# sourceMappingURL=compiled-contentlayer-config-YWDVZ74Z.mjs.map

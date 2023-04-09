@@ -1,5 +1,6 @@
 // contentlayer.config.js
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import rehypeSlug from "rehype-slug";
 var Article = defineDocumentType(() => ({
   name: "Article",
   contentType: "mdx",
@@ -37,10 +38,11 @@ var Article = defineDocumentType(() => ({
 var contentlayer_config_default = makeSource({
   // Location of source files for all defined documentTypes
   contentDirPath: "content",
-  documentTypes: [Article]
+  documentTypes: [Article],
+  mdx: { rehypePlugins: [rehypeSlug] }
 });
 export {
   Article,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-M7CZACB3.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-J7RDZGVB.mjs.map
