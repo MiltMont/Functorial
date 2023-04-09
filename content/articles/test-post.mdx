@@ -5,6 +5,8 @@ summary: "In this post we test all posible markdown syntax."
 tag: "Test"
 ---
 
+import DisplayMath from "../../components/DisplayMath";
+
 # Markdown: Syntax
 
 - [Overview](#overview)
@@ -26,6 +28,9 @@ tag: "Test"
 - [Miscellaneous](#misc)
   - [Backslash Escapes](#backslash)
   - [Automatic Links](#autolink)
+- [Mathematics](#mathematics)
+  - [Inline Math](#inline-math)
+  - [Display Math](#display-math)
 
 **Note:** This document is itself written using Markdown; you
 can [see the source for it by adding '.text' to the URL](/projects/markdown/syntax.text).
@@ -307,3 +312,27 @@ Unlike a pre-formatted code block, a code span indicates code within a
 normal paragraph. For example:
 
 Use the `printf()` function.
+
+## Mathematics
+
+Here we make some tests.
+
+### Inline Math
+
+Here is some inline math: $\lambda$. I wrote this using the syntax `$\lambda$`. Here is a
+more complicated expression. $L = \frac{1}{2} \rho v^2 S C_L$
+
+### Display Math
+
+Now the task is to find a way to render block equations.
+
+$$
+\sum_{i=1}^n d_g(v_i) = ??
+$$
+
+<DisplayMath content="\lambda" />
+
+<DisplayMath
+  content="L = \frac{1}
+  {2} \rho v^2 S C_L"
+/>

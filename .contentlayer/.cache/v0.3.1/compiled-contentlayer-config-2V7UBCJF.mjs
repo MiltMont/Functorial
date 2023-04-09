@@ -1,6 +1,8 @@
 // contentlayer.config.js
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import rehypeKatex from "rehype-katex";
 import rehypeSlug from "rehype-slug";
+import remarkMath from "remark-math";
 var Article = defineDocumentType(() => ({
   name: "Article",
   contentType: "mdx",
@@ -39,10 +41,13 @@ var contentlayer_config_default = makeSource({
   // Location of source files for all defined documentTypes
   contentDirPath: "content",
   documentTypes: [Article],
-  mdx: { rehypePlugins: [rehypeSlug] }
+  mdx: {
+    rehypePlugins: [rehypeSlug, rehypeKatex],
+    remarkPlugins: [remarkMath]
+  }
 });
 export {
   Article,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-J7RDZGVB.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-2V7UBCJF.mjs.map

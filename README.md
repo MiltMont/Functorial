@@ -68,7 +68,8 @@
 
 # Content Layer
 
-- [ ] Style markdown
-- [ ] Implement Latex
+- [x] Style markdown
+- [x] Implement Latex
+- [ ] Create Latex blocks and handle styling
 - [ ] Sort by date
 - [ ] Implement article search

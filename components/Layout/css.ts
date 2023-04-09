@@ -99,9 +99,7 @@ export const S = {
           background-color: ${p.theme.colors.accent1};
           padding: ${p.theme.space[1]};
           padding-bottom: 0;
-          border-radius: 0 ${p.theme.borderRadius[2]} ${
-            p.theme.borderRadius[2]
-          } 0 ;
+          border-radius: ${p.theme.borderRadius[2]};
             margin-bottom: ${p.theme.space[1]};
             border: 1px solid ${p.theme.colors.accent3};
             border-left: 4px solid ${p.theme.colors.accent3};
