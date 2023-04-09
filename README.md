@@ -71,5 +71,8 @@
 - [x] Style markdown
 - [x] Implement Latex
 - [ ] Create Latex blocks and handle styling
+- [ ] Implement code blocks
 - [ ] Sort by date
 - [ ] Implement article search
+
+- [ ] Create script for writing blog entries
