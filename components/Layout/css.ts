@@ -94,15 +94,14 @@ export const S = {
           margin: ${p.theme.space[1]} 0; 
         } 
   
-        blockquote {
-          
+        blockquote {  
           background-color: ${p.theme.colors.accent1};
           padding: ${p.theme.space[1]};
           padding-bottom: 0;
           border-radius: ${p.theme.borderRadius[2]};
-            margin-bottom: ${p.theme.space[1]};
-            border: 1px solid ${p.theme.colors.accent3};
-            border-left: 4px solid ${p.theme.colors.accent3};
+          margin-bottom: ${p.theme.space[1]};
+          border: 1px solid ${p.theme.colors.accent3};
+          border-left: 4px solid ${p.theme.colors.accent3};
         }
   
         blockquote > h1, blockquote > h2, blockquote > h3, blockquote > h4, blockquote > h5, blockquote > h6 {

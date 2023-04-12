@@ -14,6 +14,7 @@ import Section from "../components/utils/Section";
 
 import { allArticles, type Article } from "contentlayer/generated";
 import { type GetStaticProps, type InferGetStaticPropsType } from "next";
+import Equation from "components/Equation";
 
 export const getStaticProps: GetStaticProps<{
   articles: Article[];
@@ -58,6 +59,11 @@ export default function Home({
       </Section>
       <Spacer size={2} />
       <Layout.Container>
+        <Equation
+          content={
+            "\\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i)"
+          }
+        />
         <Text as="h1" size={7} weight={1}>
           Latest Articles
         </Text>
