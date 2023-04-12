@@ -60,6 +60,7 @@ export default function Home({
       <Spacer size={2} />
       <Layout.Container>
         <Equation
+          label="Testing"
           content={
             "\\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i) = \\sum_{i=1}^n d_G(v_i)"
           }
