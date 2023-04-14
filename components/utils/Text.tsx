@@ -33,7 +33,10 @@ type Props = {
   wrap?: boolean;
   dangerouslySetInnerHTML?: { __html: string };
   monospace?: boolean;
+  underline?: boolean;
   id?: string; //The root element id
+  mt?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  mb?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 };
 
 /*
@@ -76,6 +79,9 @@ const Typography = styled.span<Props>`
   `
       : ""};
   text-wrap: ${(p: Props) => (p.wrap ? "normal" : "nowrap")};
+  ${(p) => (p.underline ? `text-decoration: underline;` : "")}
+  margin-top: ${(p) => p.theme.space[p.mt || 0]};
+  margin-bottom: ${(p) => p.theme.space[p.mb || 0]};
 `;
 
 // Add mono font
@@ -93,6 +99,9 @@ const Text: FC<Props> = ({
   dangerouslySetInnerHTML,
   monospace,
   id,
+  underline = false,
+  mt,
+  mb,
 }) => (
   <Typography
     as={as}
@@ -106,7 +115,10 @@ const Text: FC<Props> = ({
     wrap={wrap}
     dangerouslySetInnerHTML={dangerouslySetInnerHTML}
     monospace={monospace}
+    underline={underline}
     id={id}
+    mt={mt}
+    mb={mb}
   >
     {children}
   </Typography>
