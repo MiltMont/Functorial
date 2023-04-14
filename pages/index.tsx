@@ -4,15 +4,16 @@ import ArticleCard from "../components/ArticleCard";
 import Button from "../components/Button";
 import LectureCard from "../components/LectureCard";
 import Spacer from "../components/utils/Spacer";
-import { Articles } from "../utils/dummyArticle";
 import { Lectures } from "../utils/dummyLecture";
 import Text from "../components/utils/Text";
 import Toast from "../components/Toast";
 import Icon from "../components/utils/Icon";
 import Layout from "../components/Layout";
 import Section from "../components/utils/Section";
+import { FrontMatter, getAllArticlesFrontMatter } from "../lib/mdx";
+import { GetStaticProps } from "next";
 
-export default function Home() {
+export default function Home({ articles }) {
   return (
     <>
       <Section bB>
@@ -51,18 +52,15 @@ export default function Home() {
           Latest Articles
         </Text>
         <Spacer />
+
         <Flex gap={theme.space[1]} direction="column" alignItems="stretch">
-          {Articles.map((article) => (
-            <ArticleCard
-              title={article.title}
-              summary={article.summary}
-              date={article.date}
-              slug={article.slug}
-              tag={article.tag}
-              key={article.slug}
-            />
+          {articles.map((frontMatter: FrontMatter) => (
+            <div key={frontMatter.slug}>
+              <ArticleCard frontMatter={frontMatter} />
+            </div>
           ))}
         </Flex>
+
         <Spacer />
         <Button width="full" href={"/articles"}>
           Read all articles
@@ -95,3 +93,13 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allArticles = await getAllArticlesFrontMatter();
+
+  return {
+    props: {
+      articles: allArticles,
+    },
+  };
+};
