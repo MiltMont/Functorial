@@ -4,6 +4,7 @@ import styled from "styled-components";
 import theme from "../styles/Theme";
 import { base } from "../utils/base";
 import Button from "../components/Button";
+import Equation from "../components/Equation";
 
 const LinkWrapper = styled(Link)`
   :link {
@@ -44,11 +45,13 @@ const HR = styled.hr`
 
 const MDXComponents = {
   h1: (props) => <Text as="h1" size={7} weight={4} {...props} mb={2} />,
-  h2: (props) => (
-    <Text as="h2" size={6} weight={4} mb={1} underline {...props} />
+  h2: (props) => <Text as="h2" size={6} weight={4} mb={1} {...props} />,
+  h3: (props) => (
+    <Text as="h3" size={5} weight={4} mb={1} {...props} underline />
   ),
-  h3: (props) => <Text as="h3" size={5} weight={4} mb={1} {...props} />,
-  h4: (props) => <Text as="h4" size={5} weight={3} mb={1} {...props} />,
+  h4: (props) => (
+    <Text as="h4" size={5} weight={3} mb={1} {...props} underline />
+  ),
   p: (props) => <Text as="p" size={3} weight={1} mb={1} {...props} />,
   a: (props) => <LinkWrapper {...props} />,
   blockquote: (props) => <Blockquote {...props} />,
@@ -59,6 +62,7 @@ const MDXComponents = {
   code: (props) => <Code {...props} />,
   hr: (props) => <HR {...props} />,
   Button: (props) => <Button {...props} />,
+  Equation: (props) => <Equation {...props} />,
 };
 
 export default MDXComponents;

@@ -10,6 +10,7 @@ import { base } from "../utils/base";
 import styled from "styled-components";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { useNavState } from "../hooks/useNavState";
+import { MathJaxContext } from "better-react-mathjax";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,19 +32,21 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <main className={inter.className}>
-      <Toast.Provider>
-        <Tooltip.Provider>
-          <MobileNav />
+      <MathJaxContext>
+        <Toast.Provider>
+          <Tooltip.Provider>
+            <MobileNav />
 
-          <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            <SideBar />
-            <AppContainer sideBarClosed={closed}>
-              <Component {...pageProps} />
-            </AppContainer>
-          </ThemeProvider>
-        </Tooltip.Provider>
-      </Toast.Provider>
+            <ThemeProvider theme={theme}>
+              <GlobalStyle />
+              <SideBar />
+              <AppContainer sideBarClosed={closed}>
+                <Component {...pageProps} />
+              </AppContainer>
+            </ThemeProvider>
+          </Tooltip.Provider>
+        </Toast.Provider>
+      </MathJaxContext>
     </main>
   );
 }

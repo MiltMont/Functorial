@@ -324,13 +324,27 @@ more complicated expression. $L = \frac{1}{2} \rho v^2 S C_L$
 
 ### Display Math
 
-Now the task is to find a way to render block equations.
+Here I have a react component `<Equation />` to render display math and avoid overflows.
 
-$$
-\sum_{i=1}^n d_g(v_i) = ??
-$$
+<Equation content="\sum_{v \in V_G} d_G(v) = 2 |E_G|" />
 
-But this will overflow with large expressions.
+we can also have labels
+
+<Equation
+  content="\sum_{v \in V_G} d_G(v) = 2 |E_G|"
+  label="Relation between vertices and edges"
+/>
+
+But this will overflow with large expressions. In case we need to put an equation inside a
+container we can use the option `border=false`. To yield:
+
+<Equation content="\sum_{v \in V_G} d_G(v) = 2 |E_G|" border={false} />
+
+and in a blockquote:
+
+> Here is an example of a block equation inside of a blockquote.
+>
+> <Equation border={false} content="\sum_{v \in V_G} d_G(v) = 2 |E_G|" />
 
 ## Custom React Components
 
