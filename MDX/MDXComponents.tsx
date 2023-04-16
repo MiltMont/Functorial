@@ -5,6 +5,7 @@ import theme from "../styles/Theme";
 import { base } from "../utils/base";
 import Button from "../components/Button";
 import Equation from "../components/Equation";
+import InlineMath from "../components/InlineMath";
 
 const LinkWrapper = styled(Link)`
   :link {
@@ -63,6 +64,7 @@ const MDXComponents = {
   hr: (props) => <HR {...props} />,
   Button: (props) => <Button {...props} />,
   Equation: (props) => <Equation {...props} />,
+  L: (props) => <InlineMath {...props} />,
 };
 
 export default MDXComponents;

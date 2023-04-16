@@ -9,14 +9,14 @@ type Props = {
   content: string;
   label?: string;
   border?: boolean;
+  id?: string;
 };
 
 // Add slugifyed id based on the label to the equation
-
-const Equation: FC<Props> = ({ content, label, border = true }) => {
+const Equation: FC<Props> = ({ content, label, border = true, id }) => {
   return (
     <div
-      id={label ? slugify(label, { lower: true }) : ""}
+      id={label ? slugify(label, { lower: true }) : id}
       style={{ marginBottom: theme.space[1] }}
     >
       {label && (
