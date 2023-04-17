@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import Equation from "../components/Equation";
 import InlineMath from "../components/InlineMath";
 import Theorem from "../components/Theorem";
+import Defnition from "../components/Definition";
 
 const LinkWrapper = styled(Link)`
   :link {
@@ -67,6 +68,7 @@ const MDXComponents = {
   Equation: (props) => <Equation {...props} />,
   L: (props) => <InlineMath {...props} />,
   Theorem: (props) => <Theorem {...props} />,
+  Definition: (props) => <Defnition {...props} />,
 };
 
 export default MDXComponents;

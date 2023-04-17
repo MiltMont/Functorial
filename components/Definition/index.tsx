@@ -14,10 +14,13 @@ type Props = {
 const S = {
   Root: styled.div`
     margin-bottom: ${(p) => p.theme.space[1]};
+    p {
+      margin: 0;
+    }
   `,
 
   Label: styled.div`
-    background-color: ${(p) => p.theme.colors.warning};
+    background-color: ${(p) => p.theme.colors.accent6};
 
     width: fit-content;
     padding: ${base(1 / 4)} ${base()};
@@ -26,7 +29,7 @@ const S = {
   `,
 
   Content: styled.div`
-    border: 1px solid ${(p) => p.theme.colors.warning};
+    border: 1px solid ${(p) => p.theme.colors.accent6};
     border-radius: 0 ${(p) => p.theme.borderRadius[2]}
       ${(p) => p.theme.borderRadius[2]} ${(p) => p.theme.borderRadius[2]};
     overflow-x: scroll;
@@ -34,12 +37,12 @@ const S = {
   `,
 };
 
-const Theorem: FC<Props> = ({ label, id, children }) => {
+const Defnition: FC<Props> = ({ label, id, children }) => {
   return (
     <S.Root id={label ? slugify(label, { lower: true }) : id}>
       <S.Label>
         <Text weight={4} color="background">
-          THEOREM
+          DEFINITION
         </Text>
         {label && (
           <Text size={2} weight={2} color={"background"}>
@@ -52,4 +55,4 @@ const Theorem: FC<Props> = ({ label, id, children }) => {
   );
 };
 
-export default Theorem;
+export default Defnition;

@@ -24,7 +24,7 @@ const Equation: FC<Props> = ({ content, label, border = true, id }) => {
           style={{
             backgroundColor: theme.colors.accent3,
             width: "fit-content",
-            padding: base(1 / 4),
+            padding: `${base(1 / 4)} ${base()}`,
             borderRadius: `${theme.borderRadius[2]} ${theme.borderRadius[2]} 0 0`,
           }}
         >
