@@ -351,34 +351,78 @@ and in a blockquote:
 
 Testing a <Button>Button!</Button> component.
 
-## Theorem Environment
+## Math enviroment
+
+### Theorem Environment
 
 Here we test the theorem environment. It can have labels to describe the [theorem](#euler's-theorem-for-graphs):
 
-<Theorem label="Euler's Theorem for Graphs">
+<Env label="Euler's Theorem for Graphs">
   Let <L c="G" /> be a graph with <L c="V_G" /> vertices and <L c="E_G" />{" "}
   edges. Then
   <Equation content="\sum_{v \in V_G} d_G(v) = 2 |E_G|" border={false} />
-</Theorem>
+</Env>
 
 and also we can have a theorem without a label but with an [id](#vertex-and-edges-no-label):
 
-<Theorem id="vertex-and-edges-no-label">
+<Env id="vertex-and-edges-no-label">
   Let <L c="G" /> be a graph with <L c="V_G" /> vertices and <L c="E_G" />{" "}
   edges. Then
   <Equation content="\sum_{v \in V_G} d_G(v) = 2 |E_G|" border={false} />
-</Theorem>
+</Env>
 
 ## Definition Environment
 
 In a similar fashion, we have here a definition environment with a [label](#definition-of-a-group):
 
-<Definition label="Definition of a Group">
+<Env type="definition" label="Definition of a Group">
   A group <L c="G" /> is a grupoid with a single element.
-</Definition>
+</Env>
 
 and also a definition without a label but with an [id](#definition-of-a-group-no-label):
 
-<Definition id="definition-of-a-group-no-label">
+<Env type="definition" id="definition-of-a-group-no-label">
   A group <L c="G" /> is a grupoid with a single element.
-</Definition>
+</Env>
+
+## Corollary enviroment
+
+Here we test the corollary environment. It can have [labels](#corollary-of-euler's-theorem-for-graphs):
+
+<Env label="Corollary of Euler's Theorem for Graphs" type="corollary">
+  Let <L c="G" /> be a graph with <L c="V_G" /> vertices and <L c="E_G" />{" "}
+  edges. Then
+  <Equation
+    content="\frac{1}{2} \sum_{v \in V_G} d_G(v) = |E_G|"
+    border={false}
+  />
+</Env>
+
+<Env id="corollary" type="corollary">
+  Let <L c="G" /> be a graph with <L c="V_G" /> vertices and <L c="E_G" />{" "}
+  edges. Then
+  <Equation
+    content="\frac{1}{2} \sum_{v \in V_G} d_G(v) = |E_G|"
+    border={false}
+  />
+</Env>
+
+## Proposition Environment
+
+<Env label="Corollary of Euler's Theorem for Graphs" type="proposition">
+  Let <L c="G" /> be a graph with <L c="V_G" /> vertices and <L c="E_G" />{" "}
+  edges. Then
+  <Equation
+    content="\frac{1}{2} \sum_{v \in V_G} d_G(v) = |E_G|"
+    border={false}
+  />
+</Env>
+
+<Env id="corollary" type="proposition">
+  Let <L c="G" /> be a graph with <L c="V_G" /> vertices and <L c="E_G" />{" "}
+  edges. Then
+  <Equation
+    content="\frac{1}{2} \sum_{v \in V_G} d_G(v) = |E_G|"
+    border={false}
+  />
+</Env>
