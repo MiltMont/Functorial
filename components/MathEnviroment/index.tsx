@@ -4,7 +4,7 @@ import Text from "../utils/Text";
 import S, { type as envType } from "./css";
 import { Color } from "../../styles/Theme";
 
-type Props = {
+export type Props = {
   type?:
     | "theorem"
     | "definition"

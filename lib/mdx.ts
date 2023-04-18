@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import matter from "gray-matter";
-import slugify from "slugify";
+import rehypeSlug from "rehype-slug";
+import remarkToc from "remark-toc";
 
 const root = process.cwd();
 
@@ -49,6 +50,12 @@ export const getArticleBySlug = async (slug: string) => {
   const data = parsedFile.data;
   const content = parsedFile.content;
 
-  const mdxSource = await serialize(content, {});
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [rehypeSlug],
+      remarkPlugins: [remarkToc],
+    },
+  });
+
   return { mdxSource, frontMatter: data as FrontMatter };
 };

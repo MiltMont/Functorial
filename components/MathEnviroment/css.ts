@@ -14,7 +14,7 @@ type Props = {
 export const type = {
   theorem: {
     textColor: "background",
-    color: "warning",
+    color: "brand",
   },
   definition: {
     textColor: "accent7",
@@ -22,7 +22,7 @@ export const type = {
   },
   proposition: {
     textColor: "background",
-    color: "warningDark",
+    color: "warning",
   },
   corollary: {
     textColor: "background",
