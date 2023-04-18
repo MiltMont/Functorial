@@ -6,7 +6,9 @@ import Badge from "../Badge";
 import { Card } from "./css";
 import Icon from "../utils/Icon";
 import { FrontMatter } from "../../lib/mdx";
-import slugify from "slugify";
+import Image from "next/image";
+import * as AspectRatio from "@radix-ui/react-aspect-ratio";
+import Link from "next/link";
 
 type Props = {
   frontMatter: FrontMatter;
@@ -15,7 +17,13 @@ type Props = {
 const ArticleCard: FC<Props> = ({ frontMatter }) => {
   return (
     <Card.Container>
-      <Card.Image />
+      <Link href={`articles/${frontMatter.slug}`}>
+        <Card.ImageContainer>
+          <AspectRatio.Root asChild ratio={16 / 9}>
+            <Card.Image alt={"he"} src={frontMatter.imageUrl} fill={true} />
+          </AspectRatio.Root>
+        </Card.ImageContainer>
+      </Link>
       <Box
         style={{
           backgroundColor: theme.colors.accent1,

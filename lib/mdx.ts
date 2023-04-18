@@ -13,6 +13,7 @@ export type FrontMatter = {
   summary: string;
   tag: string;
   slug: string;
+  imageUrl: string;
 };
 
 // Returns an array of files in the

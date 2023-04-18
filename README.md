@@ -65,3 +65,15 @@
 
 - [x] Create layout component for padding
 - [ ] Create grid layout component
+
+## MDX Components
+
+- [ ] Add Image components
+
+- [ ] Code Blocks
+
+## Misc
+
+- [x] Add images to Articles cards
+- [ ] Add images to Lecture cards
+- [ ] Add favicon

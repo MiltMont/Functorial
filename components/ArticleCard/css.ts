@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import theme from "../../styles/Theme";
 import { base } from "../../utils/base";
+import Image from "next/image";
 
 export const Card = {
   Container: styled.div`
@@ -26,7 +27,18 @@ export const Card = {
     color: ${theme.colors.accent4};
   `,
 
-  Image: styled.div`
-    height: 250px;
+  ImageContainer: styled.div`
+    @media (min-width: ${(p) => p.theme.breakpoints.sm}) {
+      height: 250px;
+    }
+    @media (max-width: ${(p) => p.theme.breakpoints.sm}) {
+      height: 150px;
+    }
+    overflow: hidden;
+  `,
+
+  Image: styled(Image)`
+    object-fit: contain;
+    border-radius: ${theme.borderRadius[2]} ${theme.borderRadius[2]} 0 0;
   `,
 };
