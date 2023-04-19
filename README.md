@@ -75,5 +75,6 @@
 ## Misc
 
 - [x] Add images to Articles cards
+- [ ] Format dates on Article cards
 - [ ] Add images to Lecture cards
 - [ ] Add favicon

@@ -16,7 +16,7 @@ import { GetStaticProps } from "next";
 export default function Home({ articles }) {
   return (
     <>
-      <Section bB>
+      <Section color="background">
         <Layout.Container>
           <Spacer size={2} />
           <Text as="h1" size={7} weight={4}>
@@ -48,7 +48,7 @@ export default function Home({ articles }) {
       </Section>
       <Spacer size={2} />
       <Layout.Container>
-        <Text as="h1" size={7} weight={1}>
+        <Text as="h1" size={7} weight={2}>
           Latest Articles
         </Text>
         <Spacer />
@@ -68,7 +68,7 @@ export default function Home({ articles }) {
 
         <Spacer size={2} />
 
-        <Text as="h1" size={7} weight={1}>
+        <Text as="h1" size={7} weight={2}>
           Lecture Notes
         </Text>
         <Spacer />

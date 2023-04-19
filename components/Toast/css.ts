@@ -15,6 +15,7 @@ export const S = {
     grid-template-columns: auto max-content;
     column-gap: ${theme.space[1]};
     align-items: center;
+    z-index: 1000;
   `,
 
   Viewport: styled(ToastComponent.Viewport)`
@@ -36,6 +37,7 @@ export const S = {
     list-style: none;
     outline: none;
     max-width: 100vw;
+    z-index: 1000;
   `,
 
   Title: styled(ToastComponent.Title)`

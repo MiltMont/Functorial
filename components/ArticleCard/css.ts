@@ -32,7 +32,7 @@ export const Card = {
       height: 250px;
     }
     @media (max-width: ${(p) => p.theme.breakpoints.sm}) {
-      height: 150px;
+      height: 170px;
     }
     overflow: hidden;
   `,

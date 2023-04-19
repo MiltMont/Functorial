@@ -8,6 +8,7 @@ type Props = {
 
 const Inline = styled(MathJax)`
   display: inline-block !important;
+  overflow-wrap: break-word !important;
 `;
 
 const InlineMath: FC<Props> = ({ c }) => {

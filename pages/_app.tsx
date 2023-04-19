@@ -32,11 +32,18 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <main className={inter.className}>
-      <MathJaxContext>
+      <MathJaxContext
+        config={{
+          "HTML-CSS": {
+            linebreaks: {
+              automatic: true,
+            },
+          },
+        }}
+      >
         <Toast.Provider>
           <Tooltip.Provider>
             <MobileNav />
-
             <ThemeProvider theme={theme}>
               <GlobalStyle />
               <SideBar />
