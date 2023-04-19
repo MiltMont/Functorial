@@ -1,3 +1,8 @@
+# Functorial Blog Template
+
+This blog template is designed to facilitate the writting of technical articles. It is currently under 
+development son any feedback is greatly appreciated!
+
 # ToDo
 
 ## Design System
@@ -69,7 +74,6 @@
 ## MDX Components
 
 - [ ] Add Image components
-
 - [ ] Code Blocks
 
 ## Misc
