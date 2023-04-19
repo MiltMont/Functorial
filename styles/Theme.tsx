@@ -85,6 +85,13 @@ const theme: DefaultTheme = {
     lg: "1600px",
     xl: "1920px",
   },
+  breakpointsAsInt: {
+    xs: 400,
+    sm: 768,
+    md: 1024,
+    lg: 1600,
+    xl: 1920,
+  },
   space: {
     1: base(),
     2: base(2),

@@ -69,6 +69,13 @@ declare module "styled-components" {
       lg: string;
       xl: string;
     };
+    breakpointsAsInt: {
+      xs: number;
+      sm: number;
+      md: number;
+      lg: number;
+      xl: number;
+    };
     space: {
       1: string;
       2: string;
