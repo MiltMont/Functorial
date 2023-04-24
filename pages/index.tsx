@@ -14,6 +14,7 @@ import { FrontMatter, getAllArticlesFrontMatter } from "../lib/mdx";
 import { GetStaticProps } from "next";
 import Grid from "../components/utils/Grid";
 import { useWindowSize } from "../hooks/useWindowSize";
+import { toast } from "sonner";
 
 export default function Home({ articles }) {
   const size = useWindowSize();
@@ -35,17 +36,16 @@ export default function Home({ articles }) {
           <Spacer size={1} />
           <Flex gap={theme.space[1]}>
             <Button href="/about">About</Button>
-
-            <Toast
-              title={"Copied"}
+            <Button
               fill="outline"
-              onClick={() => navigator.clipboard.writeText("miltgonmont@pm.me")}
-              description="My e-mail address has been copied to your clipboard"
-              altText="Copy my e-mail address to your clipboard"
+              onClick={() => {
+                toast.success("My e-mail has been copied to your clipboard!");
+                navigator.clipboard.writeText("miltgonmont@pm.me");
+              }}
             >
               <Icon icon="copy" />
               E-Mail
-            </Toast>
+            </Button>
           </Flex>
         </Layout.Container>
         <Spacer size={2} />

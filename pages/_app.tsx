@@ -11,6 +11,7 @@ import styled from "styled-components";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { useNavState } from "../hooks/useNavState";
 import { MathJaxContext } from "better-react-mathjax";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,6 +33,18 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <main className={inter.className}>
+      <Toaster
+        toastOptions={{
+          style: {
+            position: "fixed",
+            width: "auto",
+            borderRadius: "8px",
+            border: "1px solid",
+            margin: base(),
+          },
+        }}
+        closeButton
+      />
       <MathJaxContext
         config={{
           "HTML-CSS": {
