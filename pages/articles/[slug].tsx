@@ -7,7 +7,7 @@ import Spacer from "../../components/utils/Spacer";
 import theme from "../../styles/Theme";
 import { useWindowSize } from "../../hooks/useWindowSize";
 
-import { S } from "./css";
+import S from "./css";
 
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 

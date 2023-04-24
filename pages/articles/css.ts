@@ -3,7 +3,7 @@ import { base } from "../../utils/base";
 import Image from "next/image";
 import Layout from "../../components/Layout";
 
-export const S = {
+const S = {
   Container: styled.div`
     @media (min-width: ${(p) => p.theme.breakpoints.sm}) {
       border: 1px solid ${(p) => p.theme.colors.accent3};
@@ -35,3 +35,5 @@ export const S = {
     }
   `,
 };
+
+export default S;
