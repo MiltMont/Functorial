@@ -38,7 +38,7 @@ export default function Home({ articles }) {
             <Button
               fill="outline"
               onClick={() => {
-                toast.success("My e-mail has been copied to your clipboard!");
+                toast.success("My e-mail has been copied to your clipboard");
                 navigator.clipboard.writeText("miltgonmont@pm.me");
               }}
             >
