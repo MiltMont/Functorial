@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useToggleMenu() {
+export function useMenuState() {
   const [open, setOpen] = useState(false);
   // Toggle the menu when ⌘K is pressed
   useEffect(() => {

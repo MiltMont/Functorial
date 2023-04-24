@@ -13,7 +13,7 @@ import Tooltip from "../Tooltip";
 import { useNavState } from "../../hooks/useNavState";
 import Flex from "../utils/Flex";
 import * as Separator from "@radix-ui/react-separator";
-import { useToggleMenu } from "../../hooks/useToggleMenu";
+import { useMenuState } from "../../hooks/useMenuState";
 import CommandMenu from "../CommandMenu";
 import { Command } from "cmdk";
 
@@ -103,7 +103,7 @@ const SideBar: FC = () => {
   const closed = useNavState((state) => state.closed);
   const setClosed = useNavState((state) => state.setClosed);
 
-  const { open, setOpen } = useToggleMenu();
+  const { open, setOpen } = useMenuState();
   return (
     <S.Container display={handleDisplay(closed)}>
       <Flex

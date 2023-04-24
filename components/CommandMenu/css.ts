@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { base } from "../../utils/base";
 
 export const S = {
   Container: styled.div`
@@ -25,7 +26,7 @@ export const S = {
       outline: none;
       background: ${(p) => p.theme.colors.accent1};
       color: ${(p) => p.theme.colors.foreground};
-      border-bottom: 1px solid ${(p) => p.theme.colors.accent3};
+      border-top: 1px solid ${(p) => p.theme.colors.accent3};
       border-radius: 0;
       caret-color: ${(p) => p.theme.colors.brand};
       margin: 0;
@@ -35,16 +36,26 @@ export const S = {
       }
     }
 
+    [cmdk-separator] {
+      font-size: ${(p) => p.theme.fontSize[2]};
+      color: ${(p) => p.theme.colors.accent5};
+      font-weight: ${(p) => p.theme.fontWeight[4]};
+      padding: 0 ${(p) => p.theme.space[1]} ${base(1 / 2)}
+        ${(p) => p.theme.space[1]};
+    }
+
     [cmdk-item] {
       content-visiblity: auto;
 
       cursor: pointer;
-      height: 48px;
+      height: ${(p) => p.theme.space[2]};
       font-size: ${(p) => p.theme.fontSize[3]};
+      font-weight: ${(p) => p.theme.fontWeight[2]};
+
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 0 20px;
+      padding: 0 ${(p) => p.theme.space[1]};
       color: ${(p) => p.theme.colors.foreground};
       user-select: none;
       will-change: background, color;
@@ -57,13 +68,11 @@ export const S = {
         color: ${(p) => p.theme.colors.brand};
 
         &:after {
-          content: "";
           position: absolute;
           left: 0;
           z-index: 123;
           width: 3px;
           height: 100%;
-          background: ${(p) => p.theme.colors.brand};
         }
       }
 
