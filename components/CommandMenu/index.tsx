@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { Global } from "../../utils/globals";
 import { useNavState } from "../../hooks/useNavState";
 import Spacer from "../utils/Spacer";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,6 +17,7 @@ const CommandMenu = () => {
 
   // Routing
   const route = Router.route;
+  const router = useRouter();
 
   return (
     <S.Container>
@@ -45,7 +46,10 @@ const CommandMenu = () => {
             <Command.Item
               key={i}
               value={item.label}
-              onSelect={(value) => console.log("Selected:", value)}
+              onSelect={(value) => {
+                router.push(item.url);
+                console.log("Selected:", value);
+              }}
             >
               {item.label}
             </Command.Item>

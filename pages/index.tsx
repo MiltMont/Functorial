@@ -6,7 +6,6 @@ import LectureCard from "../components/LectureCard";
 import Spacer from "../components/utils/Spacer";
 import { Lectures } from "../utils/dummyLecture";
 import Text from "../components/utils/Text";
-import Toast from "../components/Toast";
 import Icon from "../components/utils/Icon";
 import Layout from "../components/Layout";
 import Section from "../components/utils/Section";
