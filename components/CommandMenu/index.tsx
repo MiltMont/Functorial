@@ -18,15 +18,13 @@ const CommandMenu = () => {
   // Routing
   const route = Router.route;
 
-  console.log(route.includes("/articles"));
-
   return (
     <S.Container>
       <Command label="Command Menu" className={inter.className}>
         <Command.List>
           <Command.Empty>No results found.</Command.Empty>
 
-          {route.includes("/articles") && (
+          {route.includes("/articles") && route !== "/articles" && (
             <>
               <Spacer />
               <Command.Separator>Article</Command.Separator>
