@@ -6,6 +6,7 @@ import { useNavState } from "../../hooks/useNavState";
 type Props = {
   children: React.ReactNode;
   navBarState?: boolean;
+  style?: React.CSSProperties;
 };
 
 const S = {
@@ -19,9 +20,13 @@ const S = {
   `,
 };
 
-const Container: FC<Props> = ({ children }) => {
+const Container: FC<Props> = ({ children, style }) => {
   const state = useNavState((state) => state.closed);
-  return <S.Root navBarState={state}>{children}</S.Root>;
+  return (
+    <S.Root navBarState={state} style={style}>
+      {children}
+    </S.Root>
+  );
 };
 
 const Layout = {

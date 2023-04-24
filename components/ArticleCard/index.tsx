@@ -6,7 +6,6 @@ import Badge from "../Badge";
 import { Card } from "./css";
 import Icon from "../utils/Icon";
 import { FrontMatter } from "../../lib/mdx";
-import Image from "next/image";
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import Link from "next/link";
 
