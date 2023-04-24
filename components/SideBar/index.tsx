@@ -13,10 +13,9 @@ import Tooltip from "../Tooltip";
 import { useNavState } from "../../hooks/useNavState";
 import Flex from "../utils/Flex";
 import * as Separator from "@radix-ui/react-separator";
-import { Command } from "cmdk";
-import { useState, useRef } from "react";
 import { useToggleMenu } from "../../hooks/useToggleMenu";
-import styled from "styled-components";
+import CommandMenu from "../CommandMenu";
+import { Command } from "cmdk";
 
 const handleDisplay = (closed: boolean) => {
   if (closed) {
@@ -105,8 +104,6 @@ const SideBar: FC = () => {
   const setClosed = useNavState((state) => state.setClosed);
 
   const { open, setOpen } = useToggleMenu();
-  const containerElement = useRef(null);
-
   return (
     <S.Container display={handleDisplay(closed)}>
       <Flex
@@ -187,43 +184,11 @@ const SideBar: FC = () => {
           </Tooltip>
         )}
       </Flex>
-      <Command.Dialog
-        open={open}
-        onOpenChange={setOpen}
-        label="Global Command Menu"
-        style={{
-          maxWidth: "640px",
-          width: "100%",
-          padding: "8px",
-          background: "#ffffff",
-          borderRadius: "12px",
-          overflow: "hidden",
-        }}
-      >
-        <Command.Input />
-        <Command.List>
-          <Command.Empty>No results found.</Command.Empty>
-
-          <Command.Group heading="Letters">
-            <Command.Item>a</Command.Item>
-            <Command.Item>b</Command.Item>
-            <Command.Separator />
-            <Command.Item>c</Command.Item>
-          </Command.Group>
-
-          <Command.Item>Apple</Command.Item>
-        </Command.List>
+      <Command.Dialog open={open} onOpenChange={setOpen}>
+        <CommandMenu />
       </Command.Dialog>
     </S.Container>
   );
 };
-
-const Root = styled(Command.Dialog)`
-  [cmdk-root] {
-    background-color: ${theme.colors.background};
-    width: 100%;
-    height: 100%;
-  }
-`;
 
 export default SideBar;

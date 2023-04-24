@@ -14,7 +14,6 @@ import { FrontMatter, getAllArticlesFrontMatter } from "../lib/mdx";
 import { GetStaticProps } from "next";
 import Grid from "../components/utils/Grid";
 import { useWindowSize } from "../hooks/useWindowSize";
-import { useEffect } from "react";
 
 export default function Home({ articles }) {
   const size = useWindowSize();
