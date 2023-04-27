@@ -6,14 +6,22 @@ import { GetStaticProps } from "next";
 import getPosts from "./api/posts";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getPosts();
+  try {
+    const posts = await getPosts();
 
-  return {
-    props: {
-      totalDocs: posts.totalDocs,
-      posts: posts.docs,
-    },
-  };
+    return {
+      props: {
+        totalDocs: posts.totalDocs,
+        posts: posts.docs,
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {},
+    };
+  }
 };
 
 export default function About({ posts, totalDocs }) {
