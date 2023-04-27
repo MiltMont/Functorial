@@ -3,7 +3,7 @@ import Text from "../components/utils/Text";
 import Layout from "../components/Layout";
 import Section from "../components/utils/Section";
 
-export default function About() {
+export default function About({ posts }) {
   return (
     <Section bB>
       <Spacer size={2} />

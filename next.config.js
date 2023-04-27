@@ -23,6 +23,14 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com"],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: `http://${process.env.PAYLOAD_IP}/:path*}`,
+      },
+    ];
+  },
 };
 
 module.exports = withMDX(nextConfig);
