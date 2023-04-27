@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 };
 
-export default function About({ posts, totalDocs }) {
+export default function About({ posts }) {
   return (
     <>
       <Section bB>
@@ -40,11 +40,15 @@ export default function About({ posts, totalDocs }) {
         <Spacer size={2} />
         Here is some test:
         <Spacer size={2} />
-        {posts.map((post) => (
-          <Text as="h1" size={7} weight={4} key={post.id}>
-            {post.title}
-          </Text>
-        ))}
+        {posts && (
+          <>
+            {posts.map((post) => (
+              <Text as="h1" size={7} weight={4} key={post.id}>
+                {post.title}
+              </Text>
+            ))}
+          </>
+        )}
       </Layout.Container>
     </>
   );
