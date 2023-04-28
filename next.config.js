@@ -27,7 +27,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: `http://${process.env.PAYLOAD_IP}/:path*}`,
+        destination: `${process.env.PAYLOAD_URL}/:path*}`,
       },
     ];
   },
