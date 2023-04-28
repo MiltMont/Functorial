@@ -5,22 +5,21 @@ import Flex from "../utils/Flex";
 import Badge from "../Badge";
 import { Card } from "./css";
 import Icon from "../utils/Icon";
-import { FrontMatter } from "../../lib/mdx";
-import Image from "next/image";
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import Link from "next/link";
+import { Article } from "../../types/payload";
 
 type Props = {
-  frontMatter: FrontMatter;
+  article: Article;
 };
 
-const ArticleCard: FC<Props> = ({ frontMatter }) => {
+const ArticleCard: FC<Props> = ({ article }) => {
   return (
     <Card.Container>
-      <Link href={`articles/${frontMatter.slug}`}>
+      <Link href={`articles/change-this!`}>
         <Card.ImageContainer>
           <AspectRatio.Root asChild ratio={16 / 9}>
-            <Card.Image alt={"he"} src={frontMatter.imageUrl} fill={true} />
+            <Card.Image alt={"he"} src={"/change-this!"} fill={true} />
           </AspectRatio.Root>
         </Card.ImageContainer>
       </Link>
@@ -32,19 +31,19 @@ const ArticleCard: FC<Props> = ({ frontMatter }) => {
           borderTop: `1px solid ${theme.colors.accent3}`,
         }}
       >
-        <Card.Title>{frontMatter.title}</Card.Title>
-        <Card.Summary>{frontMatter.summary}</Card.Summary>
+        <Card.Title>{article.title}</Card.Title>
+        <Card.Summary>Add a summary to this!</Card.Summary>
         <Flex
           justifyContent="space-between"
           alignItems="end"
           style={{ marginTop: theme.space[1] }}
         >
           <Flex direction="column" alignItems="start">
-            <Card.Date>{frontMatter.date}</Card.Date>
-            <Badge content={frontMatter.tag} />
+            <Card.Date>{article.publishedDate}</Card.Date>
+            <Badge content={article.category.name} />
           </Flex>
 
-          <Icon icon="round-button" href={`articles/${frontMatter.slug}`} />
+          <Icon icon="round-button" href={`articles/change-this!`} />
         </Flex>
       </Box>
     </Card.Container>

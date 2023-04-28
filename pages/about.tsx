@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Section from "../components/utils/Section";
 import { GetStaticProps } from "next";
 import getArticles from "./api/articles";
+import { Article } from "../types/payload";
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
@@ -42,7 +43,7 @@ export default function About({ articles }) {
         Here is some test:
         <Spacer size={2} />
         {articles &&
-          articles.map((article) => (
+          articles.map((article: Article) => (
             <Text as="h1" size={7} weight={4} key={article.id}>
               {article.title}
             </Text>

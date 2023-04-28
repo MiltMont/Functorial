@@ -3,21 +3,31 @@ import Text from "../../components/utils/Text";
 import Layout from "../../components/Layout";
 import Section from "../../components/utils/Section";
 import SearchBar from "../../components/SearchBar";
-import { FrontMatter, getAllArticlesFrontMatter } from "../../lib/mdx";
 import { GetStaticProps } from "next";
 import ArticleCard from "../../components/ArticleCard";
+import getArticles from "../api/articles";
+import { Article } from "../../types/payload";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allArticles = await getAllArticlesFrontMatter();
+  try {
+    const articles = await getArticles();
 
-  return {
-    props: {
-      articlesFrontMatter: allArticles,
-    },
-  };
+    return {
+      props: {
+        totalDocs: articles.totalDocs as number,
+        articles: articles.articles as Article[],
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {},
+    };
+  }
 };
 
-export default function Articles({ articlesFrontMatter }) {
+export default function Articles({ totalDocs, articles }) {
   return (
     <>
       <Section bB>
@@ -40,12 +50,13 @@ export default function Articles({ articlesFrontMatter }) {
       </Section>
       <Spacer size={2} />
       <Layout.Container>
-        {articlesFrontMatter.map((frontMatter, i) => (
-          <div key={i}>
-            <ArticleCard frontMatter={frontMatter} />
-            <Spacer size={1} />
-          </div>
-        ))}
+        {articles &&
+          articles.map((article: Article) => (
+            <div key={article.id}>
+              <ArticleCard article={article} />
+              <Spacer size={1} />
+            </div>
+          ))}
       </Layout.Container>
     </>
   );

@@ -9,13 +9,14 @@ import Text from "../components/utils/Text";
 import Icon from "../components/utils/Icon";
 import Layout from "../components/Layout";
 import Section from "../components/utils/Section";
-import { FrontMatter, getAllArticlesFrontMatter } from "../lib/mdx";
 import { GetStaticProps } from "next";
 import Grid from "../components/utils/Grid";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { toast } from "sonner";
+import getArticles from "./api/articles";
+import { Article } from "../types/payload";
 
-export default function Home({ articles }) {
+export default function Home({ articles, totalDocs }) {
   const size = useWindowSize();
 
   return (
@@ -56,11 +57,12 @@ export default function Home({ articles }) {
         </Text>
         <Spacer />
         <Flex gap={theme.space[1]} direction="column" alignItems="stretch">
-          {articles.map((frontMatter: FrontMatter) => (
-            <div key={frontMatter.slug}>
-              <ArticleCard frontMatter={frontMatter} />
-            </div>
-          ))}
+          {articles &&
+            articles.map((article: Article) => (
+              <div key={article.id}>
+                <ArticleCard article={article} />
+              </div>
+            ))}
         </Flex>
         <Spacer />
         <Button width="full" href={"/articles"}>
@@ -106,11 +108,20 @@ export default function Home({ articles }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allArticles = await getAllArticlesFrontMatter();
+  try {
+    const articles = await getArticles();
 
-  return {
-    props: {
-      articles: allArticles,
-    },
-  };
+    return {
+      props: {
+        totalDocs: articles.totalDocs as number,
+        articles: articles.articles as Article[],
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {},
+    };
+  }
 };
