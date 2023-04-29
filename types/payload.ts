@@ -4,6 +4,7 @@ export interface Article {
   slug: string;
   imageUrl: string;
   author?: string | User;
+  summary: string;
   publishedDate?: string;
   category?: Category;
   layout?: (

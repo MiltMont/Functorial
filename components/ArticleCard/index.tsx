@@ -33,7 +33,7 @@ const ArticleCard: FC<Props> = ({ article }) => {
         }}
       >
         <Card.Title>{article.title}</Card.Title>
-        <Card.Summary>Add a summary to this!</Card.Summary>
+        <Card.Summary>{article.summary}</Card.Summary>
         <Flex
           justifyContent="space-between"
           alignItems="end"
