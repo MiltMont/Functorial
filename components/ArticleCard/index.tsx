@@ -3,7 +3,7 @@ import theme from "../../styles/Theme";
 import Box from "../utils/Box";
 import Flex from "../utils/Flex";
 import Badge from "../Badge";
-import { Card } from "./css";
+import { S } from "./css";
 import Icon from "../utils/Icon";
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import Link from "next/link";
@@ -16,38 +16,31 @@ type Props = {
 const ArticleCard: FC<Props> = ({ article }) => {
   const publishedDate = new Date(article.publishedDate).toDateString();
   return (
-    <Card.Container>
+    <S.Root>
       <Link href={`articles/${article.slug}`}>
-        <Card.ImageContainer>
+        <S.ImageContainer>
           <AspectRatio.Root asChild ratio={16 / 9}>
-            <Card.Image alt={"he"} src={article.imageUrl} fill={true} />
+            <S.Image alt={"he"} src={article.imageUrl} fill={true} />
           </AspectRatio.Root>
-        </Card.ImageContainer>
+        </S.ImageContainer>
       </Link>
-      <Box
-        style={{
-          backgroundColor: theme.colors.accent1,
-          padding: theme.space[1],
-          borderRadius: `0 0 ${theme.borderRadius[2]} ${theme.borderRadius[2]}`,
-          borderTop: `1px solid ${theme.colors.accent3}`,
-        }}
-      >
-        <Card.Title>{article.title}</Card.Title>
-        <Card.Summary>{article.summary}</Card.Summary>
+      <S.Container>
+        <S.Title>{article.title}</S.Title>
+        <S.Summary>{article.summary}</S.Summary>
         <Flex
           justifyContent="space-between"
           alignItems="end"
           style={{ marginTop: theme.space[1] }}
         >
           <Flex direction="column" alignItems="start">
-            <Card.Date>{publishedDate}</Card.Date>
+            <S.Date>{publishedDate}</S.Date>
             <Badge content={article.category.name} />
           </Flex>
 
           <Icon icon="round-button" href={`articles/${article.slug}`} />
         </Flex>
-      </Box>
-    </Card.Container>
+      </S.Container>
+    </S.Root>
   );
 };
 
