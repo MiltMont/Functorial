@@ -18,6 +18,7 @@ const Nav = styled.nav`
   @media (min-width: ${theme.breakpoints.md}) {
     display: none;
   }
+  overflow: scroll;
 `;
 
 const inter = Inter({
@@ -69,6 +70,7 @@ const MobileNav: FC = () => {
             background: theme.colors.background,
             position: "fixed",
             inset: 0,
+            overflowY: "scroll",
           }}
         />
         <AlertDialog.Content
@@ -80,6 +82,7 @@ const MobileNav: FC = () => {
             bottom: "0px",
             left: "0px",
             right: "0px",
+            overflowY: "scroll",
           }}
         >
           <Flex
@@ -175,6 +178,7 @@ const MobileNav: FC = () => {
                 </Style.Item>
               </Link>
             ))}
+            <Spacer />
           </Style.Container>
         </AlertDialog.Content>
       </AlertDialog.Portal>
