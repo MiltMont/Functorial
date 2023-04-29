@@ -14,12 +14,13 @@ type Props = {
 };
 
 const ArticleCard: FC<Props> = ({ article }) => {
+  const publishedDate = new Date(article.publishedDate).toDateString();
   return (
     <Card.Container>
-      <Link href={`articles/change-this!`}>
+      <Link href={`articles/${article.slug}`}>
         <Card.ImageContainer>
           <AspectRatio.Root asChild ratio={16 / 9}>
-            <Card.Image alt={"he"} src={"/change-this!"} fill={true} />
+            <Card.Image alt={"he"} src={article.imageUrl} fill={true} />
           </AspectRatio.Root>
         </Card.ImageContainer>
       </Link>
@@ -39,11 +40,11 @@ const ArticleCard: FC<Props> = ({ article }) => {
           style={{ marginTop: theme.space[1] }}
         >
           <Flex direction="column" alignItems="start">
-            <Card.Date>{article.publishedDate}</Card.Date>
+            <Card.Date>{publishedDate}</Card.Date>
             <Badge content={article.category.name} />
           </Flex>
 
-          <Icon icon="round-button" href={`articles/change-this!`} />
+          <Icon icon="round-button" href={`articles/${article.slug}`} />
         </Flex>
       </Box>
     </Card.Container>

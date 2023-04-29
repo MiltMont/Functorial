@@ -1,6 +1,8 @@
 export interface Article {
   id: string;
   title?: string;
+  slug: string;
+  imageUrl: string;
   author?: string | User;
   publishedDate?: string;
   category?: Category;
