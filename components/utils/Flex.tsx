@@ -11,7 +11,7 @@ type Props = {
     | "stretch";
   alignContent?: "baseline" | "center" | "end" | "start" | "stretch";
   direction?: "column" | "column-reverse" | "row" | "row-reverse";
-  gap?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+  gap?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | string;
   justifyContent?:
     | "center"
     | "end"

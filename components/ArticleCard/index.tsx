@@ -1,6 +1,5 @@
 import { FC } from "react";
 import theme from "../../styles/Theme";
-import Box from "../utils/Box";
 import Flex from "../utils/Flex";
 import Badge from "../Badge";
 import { S } from "./css";
