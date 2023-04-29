@@ -33,11 +33,14 @@ const variant = {
 };
 
 export const S = {
-  Container: styled.div<Props>`
+  Container: styled.aside<Props>`
     height: 100vh;
+    flex-shrink: 0;
     width: ${(p) => variant[p.display].width};
-    position: fixed;
+    position: sticky;
     border-right: 1px solid ${(props) => props.theme.colors.accent3};
+
+    overflow-y: auto;
 
     top: 0;
     left: 0;

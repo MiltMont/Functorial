@@ -9,7 +9,6 @@ import SideBar from "../components/SideBar";
 import { base } from "../utils/base";
 import styled from "styled-components";
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { useNavState } from "../hooks/useNavState";
 import { MathJaxContext } from "better-react-mathjax";
 import { Toaster } from "sonner";
 
@@ -18,21 +17,20 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
 });
 
-type AppContainerProps = {
-  sideBarClosed?: boolean;
-};
-
-const AppContainer = styled.div<AppContainerProps>`
-  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    margin-left: ${(props) => (props.sideBarClosed ? base(5) : base(14))};
+const AppContainer = styled.div`
+  min-width: 0;
+  width: 100%;
+  flex-grow: 1;
+`;
+const Wrapper = styled.div`
+  @media (min-width: ${theme.breakpoints.md}) {
+    display: flex;
   }
 `;
 
 export default function App({ Component, pageProps }: AppProps) {
-  const closed = useNavState((state) => state.closed);
-
   return (
-    <main className={inter.className}>
+    <Wrapper className={inter.className}>
       <Toaster
         toastOptions={{
           style: {
@@ -60,13 +58,13 @@ export default function App({ Component, pageProps }: AppProps) {
             <ThemeProvider theme={theme}>
               <GlobalStyle />
               <SideBar />
-              <AppContainer sideBarClosed={closed}>
+              <AppContainer>
                 <Component {...pageProps} />
               </AppContainer>
             </ThemeProvider>
           </Tooltip.Provider>
         </Toast.Provider>
       </MathJaxContext>
-    </main>
+    </Wrapper>
   );
 }

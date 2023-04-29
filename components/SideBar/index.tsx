@@ -116,7 +116,7 @@ const SideBar: FC = () => {
           </Box>
           <S.Presentation.Items display={handleDisplay(closed)}>
             <Text size={2}>Milton Montiel</Text>
-            <Text color={"accent6"}>Math Enjoyer</Text>
+            <Text color={"accent6"}>Math Undergrad</Text>
           </S.Presentation.Items>
         </S.Presentation.Container>
 
@@ -163,6 +163,7 @@ const SideBar: FC = () => {
           ))}
         </Box>
       </Flex>
+
       <Flex justifyContent="end">
         {closed ? (
           <Tooltip content="Maximize Sidebar">
@@ -184,6 +185,7 @@ const SideBar: FC = () => {
           </Tooltip>
         )}
       </Flex>
+
       <Command.Dialog open={open} onOpenChange={setOpen}>
         <CommandMenu />
       </Command.Dialog>
