@@ -11,7 +11,7 @@ type Props = {
     | "stretch";
   alignContent?: "baseline" | "center" | "end" | "start" | "stretch";
   direction?: "column" | "column-reverse" | "row" | "row-reverse";
-  gap?: string;
+  gap?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
   justifyContent?:
     | "center"
     | "end"
@@ -24,15 +24,14 @@ type Props = {
 
 const Flex = styled.div<Props>`
   display: flex;
-  align-items: ${(props) => props.alignItems || "center"};
-  flex-direction: ${(props) => props.direction || "row"};
-  flex-wrap: ${(props) => props.wrap || "nowrap"};
-  justify-content: ${(props) => props.justifyContent || "start"};
-  flex-direction: ${(props) => props.direction || "row"};
-  gap: ${(props) => props.gap || "0"};
+  align-items: ${(p) => p.alignItems || "center"};
+  flex-direction: ${(p) => p.direction || "row"};
+  flex-wrap: ${(p) => p.wrap || "nowrap"};
+  justify-content: ${(p) => p.justifyContent || "start"};
+  flex-direction: ${(p) => p.direction || "row"};
+  gap: ${(p) => (p.gap ? (p) => p.theme.space[p.gap] : "0")};
 
-  ${(props) =>
-    props.alignContent ? `align-content: ${props.alignContent};` : ""}
+  ${(p) => (p.alignContent ? `align-content: ${p.alignContent};` : "")}
 `;
 
 export default Flex;

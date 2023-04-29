@@ -33,7 +33,6 @@ export const S = {
     font-size: ${(p) => p.theme.fontSize[1]};
     font-weight: ${(p) => p.theme.fontWeight[1]};
     color: ${(p) => p.theme.colors.accent4};
-    margin-bottom: ${base(1 / 2)};
   `,
 
   ImageContainer: styled.div`

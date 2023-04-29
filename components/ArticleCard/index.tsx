@@ -32,9 +32,9 @@ const ArticleCard: FC<Props> = ({ article }) => {
           alignItems="end"
           style={{ marginTop: theme.space[1] }}
         >
-          <Flex direction="column" alignItems="start">
-            <S.Date>{publishedDate}</S.Date>
+          <Flex direction="row" alignItems="start" gap={1}>
             <Badge content={article.category.name} />
+            <S.Date>{publishedDate}</S.Date>
           </Flex>
 
           <Icon icon="round-button" href={`articles/${article.slug}`} />
