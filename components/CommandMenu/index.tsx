@@ -95,6 +95,7 @@ const CommandMenu = () => {
                   {item.label}
                 </Command.Item>
               ))}
+              <Spacer />
             </>
           )}
         </Command.List>

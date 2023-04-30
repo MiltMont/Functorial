@@ -39,6 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
             borderRadius: "8px",
             border: "1px solid",
             margin: base(),
+            backgroundColor: theme.colors.accent7,
           },
         }}
         closeButton
