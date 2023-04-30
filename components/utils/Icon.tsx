@@ -17,6 +17,7 @@ import {
   Search,
   Minimize2,
   Maximize2,
+  ArrowLeft,
 } from "react-feather";
 import { RoundButton } from "../graphics/RoundButton";
 import Link from "next/link";
@@ -67,6 +68,8 @@ const iconSelector: FC<Props> = (props) => {
       return <Minimize2 {...props} />;
     case "maximize":
       return <Maximize2 {...props} />;
+    case "return":
+      return <ArrowLeft {...props} />;
   }
 };
 

@@ -8,13 +8,16 @@ import { base } from "../../utils/base";
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
+import Icon from "../../components/utils/Icon";
+import Grid from "../../components/utils/Grid";
+import Link from "next/link";
 
 const S = {
   Container: styled.div`
     @media (min-width: ${(p) => p.theme.breakpoints.sm}) {
       border: 1px solid ${(p) => p.theme.colors.accent3};
       border-radius: ${(p) => p.theme.borderRadius[2]};
-
+      overflow: hidden;
       background-color: ${(p) => p.theme.colors.background};
     }
   `,
@@ -24,6 +27,16 @@ const S = {
       background-color: ${(p) => p.theme.colors.accent1};
       padding: ${base(1 / 2)};
     }
+  `,
+
+  Info: styled.div`
+    height: ${(p) => p.theme.space[2]};
+    widht: 100%;
+    background-color: ${(p) => p.theme.colors.accent1};
+    border-bottom: 1px solid ${(p) => p.theme.colors.accent3};
+    display: flex;
+    align-items: center;
+    padding: 0 ${(p) => p.theme.space[1]};
   `,
 
   ArticleImage: styled(Image)`
@@ -76,6 +89,11 @@ export default function Article({ post }) {
   return (
     <S.Root>
       <S.Container>
+        <S.Info>
+          <Link href="/">
+            <Icon icon="return" color="accent8" />
+          </Link>
+        </S.Info>
         <Layout.Container>
           <Spacer size={2} />
           <AspectRatio.Root asChild ratio={16 / 9}>
@@ -87,6 +105,7 @@ export default function Article({ post }) {
           </AspectRatio.Root>
           <Spacer size={2} />
         </Layout.Container>
+        <Grid columns={12}></Grid>
         <Layout.Container>
           <MDXRemote {...post.mdxSource} components={MDXComponents} />
           <Spacer size={2} />

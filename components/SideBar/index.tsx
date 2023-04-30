@@ -80,7 +80,7 @@ const Divisor = (state: boolean, label: string) => {
     return (
       <Separator.Root
         style={{
-          margin: `${theme.space[1]} 0 `,
+          margin: `${theme.space[2]} 0 `,
           width: "100%",
           backgroundColor: theme.colors.accent3,
           height: "1px",
