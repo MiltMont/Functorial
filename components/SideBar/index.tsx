@@ -42,7 +42,7 @@ const Item = (state: boolean, item: Item, route: string) => {
           <Icon
             icon={item.icon}
             color={route === item.url ? "foreground" : "accent6"}
-            size={20}
+            size={18}
           />
           <S.ItemLabel
             state={route === item.url ? "active" : "inactive"}
@@ -80,7 +80,7 @@ const Divisor = (state: boolean, label: string) => {
     return (
       <Separator.Root
         style={{
-          margin: `${theme.space[2]} 0 `,
+          margin: `${theme.space[1]} 0 `,
           width: "100%",
           backgroundColor: theme.colors.accent3,
           height: "1px",

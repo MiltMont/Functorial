@@ -20,7 +20,7 @@ const variant = {
   },
 
   open: {
-    width: base(14),
+    width: base(12),
     sectionLabel: " ",
     itemLabel: " ",
   },
@@ -94,6 +94,14 @@ export const S = {
 
     background-color: ${(props) => variant[props.state].backgroundColor};
     border: ${(props) => variant[props.state].border};
+
+    &:hover {
+      background-color: ${(props) => props.theme.colors.accent1};
+
+      svg {
+        stroke: ${(props) => props.theme.colors.accent8};
+      }
+    }
   `,
 
   ItemLabel: styled.div<Props>`
@@ -102,6 +110,10 @@ export const S = {
     color: ${(props) => variant[props.state].color};
     width: 100%;
     display: ${(p) => variant[p.display].itemLabel}};
+
+    &:hover {
+      color: ${(props) => props.theme.colors.accent8};
+    }
 
   `,
 
