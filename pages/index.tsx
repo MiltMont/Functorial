@@ -34,7 +34,7 @@ export default function Home({ articles, totalDocs }) {
             in has to be.
           </Text>
           <Spacer size={1} />
-          <Flex gap={theme.space[1]}>
+          <Flex gap={1}>
             <Button href="/about">About</Button>
             <Button
               fill="outline"
