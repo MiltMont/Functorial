@@ -11,6 +11,7 @@ import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import Icon from "../../components/utils/Icon";
 import Grid from "../../components/utils/Grid";
 import Link from "next/link";
+import theme from "../../styles/Theme";
 
 const S = {
   Container: styled.div`
@@ -40,17 +41,19 @@ const S = {
   `,
 
   ArticleImage: styled(Image)`
-    @media (min-width: ${(p) => p.theme.breakpoints.sm}) {
-      border-radius: ${(p) => p.theme.borderRadius[2]};
+    @media (min-width: ${(p) => p.theme.breakpoints.md}) {
+      border-radius: ${(p) => p.theme.borderRadius[1]};
     }
   `,
 
-  ImageContainer: styled(Layout.Container)`
+  ImageContainer: styled.div`
     @media (min-width: ${(p) => p.theme.breakpoints.sm}) {
-      padding: 100px;
-      background-color: ${(p) => p.theme.colors.accent1};
-      border: 10px solid ${(p) => p.theme.colors.accent3};
-      margin: 0;
+      margin-bottom: ${(p) => p.theme.space[2]};
+    }
+
+    @media (min-width: ${(p) => p.theme.breakpoints.md}) {
+      margin-top: ${(p) => p.theme.space[2]};
+      padding: 0 ${(p) => p.theme.space[4]};
     }
   `,
 };
@@ -94,18 +97,16 @@ export default function Article({ post }) {
             <Icon icon="return" color="accent8" />
           </Link>
         </S.Info>
-        <Layout.Container>
-          <Spacer size={2} />
-          <AspectRatio.Root asChild ratio={16 / 9}>
+        <S.ImageContainer>
+          <AspectRatio.Root ratio={16 / 9}>
             <S.ArticleImage
               alt={"Article Image"}
               src={post.frontMatter.imageUrl}
               fill={true}
             />
           </AspectRatio.Root>
-          <Spacer size={2} />
-        </Layout.Container>
-        <Grid columns={12}></Grid>
+        </S.ImageContainer>
+
         <Layout.Container>
           <MDXRemote {...post.mdxSource} components={MDXComponents} />
           <Spacer size={2} />
