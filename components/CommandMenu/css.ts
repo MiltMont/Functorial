@@ -6,7 +6,7 @@ export const S = {
     [cmdk-root] {
       max-width: 640px;
       width: 100%;
-      background: ${(p) => p.theme.colors.accent1};
+
       border: 1px solid ${(p) => p.theme.colors.accent3};
       border-radius: ${(p) => p.theme.borderRadius[2]};
       overflow: hidden;
@@ -16,6 +16,10 @@ export const S = {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      --webkit-backdrop-filter: blur(30px);
+      backdrop-filter: blur(30px);
+      background: rgba(21, 20, 20, 0.9);
     }
 
     [cmdk-input] {
@@ -24,12 +28,16 @@ export const S = {
       font-size: ${(p) => p.theme.fontSize[3]};
       padding: ${(p) => p.theme.space[1]};
       outline: none;
-      background: ${(p) => p.theme.colors.accent1};
+
       color: ${(p) => p.theme.colors.foreground};
       border-top: 1px solid ${(p) => p.theme.colors.accent3};
       border-radius: 0;
       caret-color: ${(p) => p.theme.colors.brand};
       margin: 0;
+
+      --webkit-backdrop-filter: blur(30px);
+      backdrop-filter: blur(30px);
+      background: rgba(21, 20, 20, 0.1);
 
       &::placeholder {
         color: ${(p) => p.theme.colors.accent6};
@@ -39,7 +47,7 @@ export const S = {
     [cmdk-separator] {
       font-size: ${(p) => p.theme.fontSize[2]};
       color: ${(p) => p.theme.colors.accent5};
-      font-weight: ${(p) => p.theme.fontWeight[4]};
+      font-weight: ${(p) => p.theme.fontWeight[2]};
       padding: 0 ${(p) => p.theme.space[1]} ${base(1 / 2)}
         ${(p) => p.theme.space[1]};
     }
@@ -50,7 +58,7 @@ export const S = {
       cursor: pointer;
       height: ${(p) => p.theme.space[2]};
       font-size: ${(p) => p.theme.fontSize[3]};
-      font-weight: ${(p) => p.theme.fontWeight[2]};
+      font-weight: ${(p) => p.theme.fontWeight[1]};
 
       display: flex;
       align-items: center;
@@ -66,6 +74,9 @@ export const S = {
       &[data-selected="true"] {
         background: ${(p) => p.theme.colors.accent2};
         color: ${(p) => p.theme.colors.brand};
+        margin-left: ${(p) => p.theme.space[1]};
+        margin-right: ${(p) => p.theme.space[1]};
+        border-radius: ${(p) => p.theme.borderRadius[1]};
 
         &:after {
           position: absolute;

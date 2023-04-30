@@ -9,9 +9,7 @@ import Image from "next/image";
 import Layout from "../../components/Layout";
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import Icon from "../../components/utils/Icon";
-import Grid from "../../components/utils/Grid";
 import Link from "next/link";
-import theme from "../../styles/Theme";
 
 const S = {
   Container: styled.div`
@@ -36,6 +34,12 @@ const S = {
     background-color: ${(p) => p.theme.colors.accent1};
     border-bottom: 1px solid ${(p) => p.theme.colors.accent3};
     display: flex;
+
+    gap: ${(p) => p.theme.space[1]};
+
+    @media (min-width: ${(p) => p.theme.breakpoints.md}) {
+      gap: ${(p) => p.theme.space[2]};
+    }
     align-items: center;
     padding: 0 ${(p) => p.theme.space[1]};
   `,
@@ -94,7 +98,7 @@ export default function Article({ post }) {
       <S.Container>
         <S.Info>
           <Link href="/">
-            <Icon icon="return" color="accent8" />
+            <Icon icon="close" color="accent8" />
           </Link>
         </S.Info>
         <S.ImageContainer>
