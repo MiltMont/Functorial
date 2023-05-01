@@ -5,6 +5,7 @@ import theme from "../../styles/Theme";
 type Props = {
   state?: "active" | "inactive";
   display?: "open" | "closed";
+  readingMode?: boolean;
 };
 
 const variant = {
@@ -49,7 +50,7 @@ export const S = {
     display: none;
 
     @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-      display: flex;
+      display: ${(p) => (p.readingMode ? "none" : "flex")};
       flex-direction: column;
 
       ${(p) =>

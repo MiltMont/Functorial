@@ -11,6 +11,8 @@ import styled from "styled-components";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import { MathJaxContext } from "better-react-mathjax";
 import { Toaster } from "sonner";
+import { useRouter } from "next/router";
+import { useReadingMode } from "../hooks/useReadingMode";
 
 const inter = Inter({
   subsets: ["latin"],

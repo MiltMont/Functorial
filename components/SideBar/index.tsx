@@ -16,6 +16,7 @@ import * as Separator from "@radix-ui/react-separator";
 import { useMenuState } from "../../hooks/useMenuState";
 import CommandMenu from "../CommandMenu";
 import { Command } from "cmdk";
+import { useReadingMode } from "../../hooks/useReadingMode";
 
 const handleDisplay = (closed: boolean) => {
   if (closed) {
@@ -104,8 +105,12 @@ const SideBar: FC = () => {
   const setClosed = useNavState((state) => state.setClosed);
 
   const { open, setOpen } = useMenuState();
+
+  // Reading Mode
+  const readingMode = useReadingMode((state) => state.enabled);
+
   return (
-    <S.Container display={handleDisplay(closed)}>
+    <S.Container display={handleDisplay(closed)} readingMode={readingMode}>
       <Flex
         direction="column"
         alignItems={handleDisplay(closed) === "closed" ? "center" : "start"}

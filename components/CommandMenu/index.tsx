@@ -6,6 +6,7 @@ import { useNavState } from "../../hooks/useNavState";
 import Spacer from "../utils/Spacer";
 import Router, { useRouter } from "next/router";
 import { useState } from "react";
+import { useReadingMode } from "../../hooks/useReadingMode";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,12 @@ const CommandMenu = () => {
   //Pages
   const [pages, setPages] = useState([]);
   const page = pages[pages.length - 1];
+
+  //Reading Mode
+  const setReadingMode = useReadingMode((state) => state.setEnabled);
+  const readingMode = useReadingMode((state) => state.enabled);
+
+  console.log(readingMode);
 
   return (
     <S.Container>
@@ -70,6 +77,9 @@ const CommandMenu = () => {
                 onSelect={() => setPages([...pages, "share-article"])}
               >
                 Share article
+              </Command.Item>
+              <Command.Item onSelect={() => setReadingMode(readingMode)}>
+                {readingMode ? "Disable reading mode" : "Enable reading mode"}
               </Command.Item>
             </>
           )}

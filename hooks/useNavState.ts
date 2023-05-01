@@ -1,9 +1,9 @@
 import { create } from "zustand";
 
-interface NavigationState {
+type NavigationState = {
   closed: boolean;
   setClosed: (state: boolean) => void;
-}
+};
 
 export const useNavState = create<NavigationState>()((set) => ({
   closed: false,
