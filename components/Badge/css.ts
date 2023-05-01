@@ -35,6 +35,7 @@ const Container = styled.div<Props>`
   padding-left: ${base(1 / 2)};
   padding-right: ${base(1 / 2)};
   border-radius: ${theme.borderRadius[1]};
+  width: fit-content;
 `;
 
 export default Container;
