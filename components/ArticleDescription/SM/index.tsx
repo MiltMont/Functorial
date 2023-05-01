@@ -25,8 +25,6 @@ const SM: FC<Props> = ({ frontMatter }) => {
       <Text size={3} weight={1} color="accent6" mt={1} mb={1}>
         {frontMatter.summary}
       </Text>
-
-      <S.HR />
     </S.Root>
   );
 };

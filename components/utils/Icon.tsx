@@ -18,13 +18,34 @@ import {
   Minimize2,
   Maximize2,
   ArrowLeft,
+  Plus,
 } from "react-feather";
 import { RoundButton } from "../graphics/RoundButton";
 import Link from "next/link";
 import { Color } from "../../styles/Theme";
 
 type Props = {
-  icon: string;
+  icon:
+    | "home"
+    | "archive"
+    | "book"
+    | "book-open"
+    | "terminal"
+    | "user"
+    | "twitter"
+    | "github"
+    | "music"
+    | "pen-tool"
+    | "package"
+    | "close"
+    | "copy"
+    | "round-button"
+    | "search"
+    | "minimize"
+    | "maximize"
+    | "return"
+    | string;
+
   size?: number;
   color?: Color;
   strokeWidth?: number;
@@ -70,6 +91,8 @@ const iconSelector: FC<Props> = (props) => {
       return <Maximize2 {...props} />;
     case "return":
       return <ArrowLeft {...props} />;
+    case "plus":
+      return <Plus {...props} />;
   }
 };
 

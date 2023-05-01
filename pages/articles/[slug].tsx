@@ -11,6 +11,7 @@ import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import Icon from "../../components/utils/Icon";
 import Link from "next/link";
 import ArticleDescription from "../../components/ArticleDescription";
+import TOC from "../../components/TOC";
 
 const S = {
   Container: styled.div`
@@ -92,6 +93,14 @@ export const getStaticProps = async ({ params }) => {
   }
 };
 
+const dummyToc = [
+  "Heading 1",
+  "Heading 2",
+  "Heading 3",
+  "Heading 4",
+  "Heading 5",
+];
+
 export default function Article({ post }) {
   if (!post) return null;
 
@@ -117,6 +126,8 @@ export default function Article({ post }) {
         </S.ImageContainer>
         <Layout.Container>
           <ArticleDescription.SM frontMatter={post.frontMatter} />
+          <TOC headings={dummyToc} />
+          <Spacer />
           <MDXRemote {...post.mdxSource} components={MDXComponents} />
           <Spacer size={2} />
         </Layout.Container>
