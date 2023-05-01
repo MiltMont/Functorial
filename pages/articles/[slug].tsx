@@ -1,8 +1,4 @@
-import {
-  getAllArticlesFrontMatter,
-  getArticleBySlug,
-  FrontMatter,
-} from "../../lib/mdx";
+import { getAllArticlesFrontMatter, getArticleBySlug } from "../../lib/mdx";
 import { GetStaticPaths } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import MDXComponents from "../../MDX/MDXComponents";
@@ -14,9 +10,7 @@ import Layout from "../../components/Layout";
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
 import Icon from "../../components/utils/Icon";
 import Link from "next/link";
-import Text from "../../components/utils/Text";
-import Badge from "../../components/Badge";
-import Flex from "../../components/utils/Flex";
+import ArticleDescription from "../../components/ArticleDescription";
 
 const S = {
   Container: styled.div`
@@ -58,6 +52,7 @@ const S = {
   `,
 
   ImageContainer: styled.div`
+    z-index: 1;
     @media (min-width: ${(p) => p.theme.breakpoints.sm}) {
       margin-bottom: ${(p) => p.theme.space[2]};
     }
@@ -65,22 +60,6 @@ const S = {
     @media (min-width: ${(p) => p.theme.breakpoints.md}) {
       margin-top: ${(p) => p.theme.space[2]};
       padding: 0 ${(p) => p.theme.space[4]};
-    }
-  `,
-
-  ArticleDescriptionSM: styled.div`
-    margin-top: ${(p) => p.theme.space[2]};
-    margin-bottom: ${(p) => p.theme.space[2]};
-    @media (min-width: ${(p) => p.theme.breakpoints.md}) {
-      display: none;
-    }
-  `,
-
-  ArticleDescriptionLG: styled.div`
-    display: none;
-
-    @media (min-width: ${(p) => p.theme.breakpoints.md}) {
-      display: block;
     }
   `,
 };
@@ -125,24 +104,10 @@ export default function Article({ post }) {
           </Link>
         </S.Info>
         <Layout.Container>
-          <S.ArticleDescriptionLG>
-            <Spacer size={2} />
-            <Badge content={post.frontMatter.tag} />
-            <Text size={7} weight={1}>
-              {post.frontMatter.title}
-            </Text>
-            <Flex direction="row" gap={base(1)} alignItems="center">
-              <Text size={2} weight={1} color={"accent5"}>
-                {post.frontMatter.date}
-              </Text>
-              <Text size={3} weight={1} color="accent6">
-                {post.frontMatter.summary}
-              </Text>
-            </Flex>
-          </S.ArticleDescriptionLG>
+          <ArticleDescription.LG frontMatter={post.frontMatter} />
         </Layout.Container>
         <S.ImageContainer>
-          <AspectRatio.Root ratio={16 / 9}>
+          <AspectRatio.Root ratio={16 / 9} style={{ zIndex: "1" }}>
             <S.ArticleImage
               alt={"Article Image"}
               src={post.frontMatter.imageUrl}
@@ -151,24 +116,7 @@ export default function Article({ post }) {
           </AspectRatio.Root>
         </S.ImageContainer>
         <Layout.Container>
-          <S.ArticleDescriptionSM>
-            <Text size={7} weight={1}>
-              {post.frontMatter.title}
-            </Text>
-
-            <Flex direction="row" gap={base(1)} alignItems="center">
-              <Badge content={post.frontMatter.tag} />
-              <Text size={2} weight={1} color={"accent5"}>
-                {post.frontMatter.date}
-              </Text>
-            </Flex>
-            <Spacer />
-            <Text size={3} weight={1} color="accent6">
-              {post.frontMatter.summary}
-            </Text>
-            <Spacer />
-            <hr />
-          </S.ArticleDescriptionSM>
+          <ArticleDescription.SM frontMatter={post.frontMatter} />
           <MDXRemote {...post.mdxSource} components={MDXComponents} />
           <Spacer size={2} />
         </Layout.Container>

@@ -32,10 +32,13 @@ const Tooltip: FC<Props> = ({
 export default Tooltip;
 
 const S = {
-  Root: styled(TooltipPrimitive.Root)``,
+  Root: styled(TooltipPrimitive.Root)`
+    z-index: 9999;
+  `,
   Trigger: styled(TooltipPrimitive.Trigger)``,
 
   Content: styled(TooltipPrimitive.Content)`
+    z-index: ${(p) => p.theme.zIndex[4]};
     border-radius: ${(p) => p.theme.borderRadius[2]};
     padding: ${base(1 / 2)};
     font-size: ${(p) => p.theme.fontSize[2]};

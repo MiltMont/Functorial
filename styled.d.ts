@@ -90,5 +90,11 @@ declare module "styled-components" {
       11: string;
       12: string;
     };
+    zIndex: {
+      1: number;
+      2: number;
+      3: number;
+      4: number;
+    };
   }
 }

@@ -106,6 +106,12 @@ const theme: DefaultTheme = {
     11: base(11),
     12: base(12),
   },
+  zIndex: {
+    1: 100,
+    2: 200,
+    3: 300,
+    4: 400,
+  },
 };
 
 export default theme;
