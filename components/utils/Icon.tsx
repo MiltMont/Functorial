@@ -51,6 +51,7 @@ type Props = {
   strokeWidth?: number;
   button?: boolean;
   href?: string;
+  onClick?: () => void;
 };
 
 const iconSelector: FC<Props> = (props) => {
@@ -103,10 +104,22 @@ const Icon: FC<Props> = ({
   strokeWidth = 2,
   button = false,
   href,
+  onClick,
 }) => {
-  const props = { icon, size, color: theme.colors[color], strokeWidth, href };
+  const props = {
+    icon,
+    size,
+    color: theme.colors[color],
+    strokeWidth,
+    href,
+    onClick,
+  };
   if (button) {
-    return <button style={{ all: "unset" }}>{iconSelector(props)}</button>;
+    return (
+      <button style={{ all: "unset" }} onClick={onClick}>
+        {iconSelector(props)}
+      </button>
+    );
   } else if (href) {
     return <Link href={href}>{iconSelector(props)}</Link>;
   } else {

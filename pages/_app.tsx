@@ -24,6 +24,7 @@ const AppContainer = styled.div`
   width: 100%;
   flex-grow: 1;
 `;
+
 const Wrapper = styled.div`
   @media (min-width: ${theme.breakpoints.md}) {
     display: flex;

@@ -12,6 +12,7 @@ import Icon from "../../components/utils/Icon";
 import Link from "next/link";
 import ArticleDescription from "../../components/ArticleDescription";
 import TOC from "../../components/TOC";
+import { useRouter } from "next/router";
 
 const S = {
   Container: styled.div`
@@ -31,19 +32,23 @@ const S = {
   `,
 
   Info: styled.div`
-    height: ${(p) => p.theme.space[2]};
     widht: 100%;
-    background-color: ${(p) => p.theme.colors.accent1};
+    background-color: ${(p) => p.theme.colors.background};
     border-bottom: 1px solid ${(p) => p.theme.colors.accent3};
     display: flex;
 
-    gap: ${(p) => p.theme.space[1]};
-
     @media (min-width: ${(p) => p.theme.breakpoints.md}) {
-      gap: ${(p) => p.theme.space[2]};
     }
     align-items: center;
-    padding: 0 ${(p) => p.theme.space[1]};
+  `,
+
+  IconBox: styled.button`
+    all: unset;
+
+    overflow: hidden;
+    padding: ${base(1 / 2)};
+    border-right: 1px solid ${(p) => p.theme.colors.accent3};
+    background-color: ${(p) => p.theme.colors.accent1};
   `,
 
   ArticleImage: styled(Image)`
@@ -103,14 +108,22 @@ const dummyToc = [
 
 export default function Article({ post }) {
   if (!post) return null;
+  const router = useRouter();
 
   return (
     <S.Root>
       <S.Container>
         <S.Info>
-          <Link href="/">
-            <Icon icon="close" color="accent8" />
-          </Link>
+          <S.IconBox>
+            <Icon icon="close" color="accent4" onClick={() => router.back()} />
+          </S.IconBox>
+          <S.IconBox>
+            <Icon
+              icon="minimize"
+              color="accent4"
+              onClick={() => console.log("minimize")}
+            />
+          </S.IconBox>
         </S.Info>
         <Layout.Container>
           <ArticleDescription.LG frontMatter={post.frontMatter} />
