@@ -36,6 +36,7 @@ const S = {
     background-color: ${(p) => p.theme.colors.background};
     border-bottom: 1px solid ${(p) => p.theme.colors.accent3};
     display: flex;
+    flex-direction: row-reverse;
 
     @media (min-width: ${(p) => p.theme.breakpoints.md}) {
     }
@@ -47,7 +48,7 @@ const S = {
 
     overflow: hidden;
     padding: ${base(1 / 2)};
-    border-right: 1px solid ${(p) => p.theme.colors.accent3};
+    border-left: 1px solid ${(p) => p.theme.colors.accent3};
     background-color: ${(p) => p.theme.colors.accent1};
   `,
 
